@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 5821a62567ba543708a69c12846cb715
+timeCreated: 1443553717
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: body
+    100002: bodyBottom
+    100004: bodytop
+    100006: dorsal
+    100008: extrudedSurface151
+    100010: extrudedSurface151 1
+    100012: extrudedSurface152
+    100014: extrudedSurface152 1
+    100016: extrudedSurface153
+    100018: extrudedSurface153 1
+    100020: extrudedSurface154
+    100022: extrudedSurface154 1
+    100024: extrudedSurface155
+    100026: extrudedSurface155 1
+    100028: extrudedSurface156
+    100030: extrudedSurface157
+    100032: extrudedSurface158
+    100034: extrudedSurface159
+    100036: extrudedSurface160
+    100038: extrudedSurface161
+    100040: extrudedSurface162
+    100042: extrudedSurface163
+    100044: extrudedSurface164
+    100046: extrudedSurface165
+    100048: extrudedSurface166
+    100050: extrudedSurface167
+    100052: extrudedSurface168
+    100054: extrudedSurface169
+    100056: extrudedSurface170
+    100058: extrudedSurface171
+    100060: extrudedSurface172
+    100062: extrudedSurface173
+    100064: extrudedSurface174
+    100066: extrudedSurface175
+    100068: extrudedSurface176
+    100070: eyes
+    100072: fin_L
+    100074: fin_R
+    100076: //RootNode
+    100078: mouth
+    100080: tail
+    400000: body
+    400002: bodyBottom
+    400004: bodytop
+    400006: dorsal
+    400008: extrudedSurface151
+    400010: extrudedSurface151 1
+    400012: extrudedSurface152
+    400014: extrudedSurface152 1
+    400016: extrudedSurface153
+    400018: extrudedSurface153 1
+    400020: extrudedSurface154
+    400022: extrudedSurface154 1
+    400024: extrudedSurface155
+    400026: extrudedSurface155 1
+    400028: extrudedSurface156
+    400030: extrudedSurface157
+    400032: extrudedSurface158
+    400034: extrudedSurface159
+    400036: extrudedSurface160
+    400038: extrudedSurface161
+    400040: extrudedSurface162
+    400042: extrudedSurface163
+    400044: extrudedSurface164
+    400046: extrudedSurface165
+    400048: extrudedSurface166
+    400050: extrudedSurface167
+    400052: extrudedSurface168
+    400054: extrudedSurface169
+    400056: extrudedSurface170
+    400058: extrudedSurface171
+    400060: extrudedSurface172
+    400062: extrudedSurface173
+    400064: extrudedSurface174
+    400066: extrudedSurface175
+    400068: extrudedSurface176
+    400070: eyes
+    400072: fin_L
+    400074: fin_R
+    400076: //RootNode
+    400078: mouth
+    400080: tail
+    2300000: body
+    2300002: bodyBottom
+    2300004: bodytop
+    2300006: extrudedSurface151
+    2300008: extrudedSurface151 1
+    2300010: extrudedSurface152
+    2300012: extrudedSurface152 1
+    2300014: extrudedSurface153
+    2300016: extrudedSurface153 1
+    2300018: extrudedSurface154
+    2300020: extrudedSurface154 1
+    2300022: extrudedSurface155
+    2300024: extrudedSurface155 1
+    2300026: extrudedSurface156
+    2300028: extrudedSurface157
+    2300030: extrudedSurface158
+    2300032: extrudedSurface159
+    2300034: extrudedSurface160
+    2300036: extrudedSurface161
+    2300038: extrudedSurface162
+    2300040: extrudedSurface163
+    2300042: extrudedSurface164
+    2300044: extrudedSurface165
+    2300046: extrudedSurface166
+    2300048: extrudedSurface167
+    2300050: extrudedSurface168
+    2300052: extrudedSurface169
+    2300054: extrudedSurface170
+    2300056: extrudedSurface171
+    2300058: extrudedSurface172
+    2300060: extrudedSurface173
+    2300062: extrudedSurface174
+    2300064: extrudedSurface175
+    2300066: extrudedSurface176
+    2300068: eyes
+    3300000: body
+    3300002: bodyBottom
+    3300004: bodytop
+    3300006: extrudedSurface151
+    3300008: extrudedSurface151 1
+    3300010: extrudedSurface152
+    3300012: extrudedSurface152 1
+    3300014: extrudedSurface153
+    3300016: extrudedSurface153 1
+    3300018: extrudedSurface154
+    3300020: extrudedSurface154 1
+    3300022: extrudedSurface155
+    3300024: extrudedSurface155 1
+    3300026: extrudedSurface156
+    3300028: extrudedSurface157
+    3300030: extrudedSurface158
+    3300032: extrudedSurface159
+    3300034: extrudedSurface160
+    3300036: extrudedSurface161
+    3300038: extrudedSurface162
+    3300040: extrudedSurface163
+    3300042: extrudedSurface164
+    3300044: extrudedSurface165
+    3300046: extrudedSurface166
+    3300048: extrudedSurface167
+    3300050: extrudedSurface168
+    3300052: extrudedSurface169
+    3300054: extrudedSurface170
+    3300056: extrudedSurface171
+    3300058: extrudedSurface172
+    3300060: extrudedSurface173
+    3300062: extrudedSurface174
+    3300064: extrudedSurface175
+    3300066: extrudedSurface176
+    3300068: eyes
+    4300000: extrudedSurface176
+    4300002: extrudedSurface175
+    4300004: extrudedSurface166
+    4300006: extrudedSurface167
+    4300008: extrudedSurface168
+    4300010: extrudedSurface169
+    4300012: extrudedSurface170
+    4300014: extrudedSurface171
+    4300016: extrudedSurface172
+    4300018: extrudedSurface173
+    4300020: extrudedSurface174
+    4300022: extrudedSurface157
+    4300024: extrudedSurface158
+    4300026: extrudedSurface159
+    4300028: extrudedSurface160
+    4300030: extrudedSurface161
+    4300032: extrudedSurface162
+    4300034: extrudedSurface164
+    4300036: extrudedSurface165
+    4300038: extrudedSurface163
+    4300040: extrudedSurface151
+    4300042: extrudedSurface152
+    4300044: extrudedSurface153
+    4300046: extrudedSurface154
+    4300048: extrudedSurface155
+    4300050: extrudedSurface156
+    4300052: bodyBottom
+    4300054: bodytop
+    4300056: eyes
+    4300058: extrudedSurface151
+    4300060: extrudedSurface152
+    4300062: extrudedSurface153
+    4300064: extrudedSurface154
+    4300066: extrudedSurface155
+    4300068: body
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

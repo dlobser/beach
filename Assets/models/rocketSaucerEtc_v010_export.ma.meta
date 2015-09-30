@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: a7bf43bb72576495cba1182ef348870d
+timeCreated: 1443574918
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: capsule
+    100002: car
+    100004: cell
+    100006: chandelier
+    100008: column_B
+    100010: columnA
+    100012: cubeExtrude
+    100014: cubeExtrude2
+    100016: funnel
+    100018: hourglass
+    100020: lightStrip
+    100022: lightStrip 1
+    100024: lightStrip 10
+    100026: lightStrip 11
+    100028: lightStrip 12
+    100030: lightStrip 13
+    100032: lightStrip 14
+    100034: lightStrip 2
+    100036: lightStrip 3
+    100038: lightStrip 4
+    100040: lightStrip 5
+    100042: lightStrip 6
+    100044: lightStrip 7
+    100046: lightStrip 8
+    100048: lightStrip 9
+    100050: rocket
+    100052: //RootNode
+    100054: saucer
+    100056: scaffolding
+    100058: silhouette
+    100060: silhouette 1
+    100062: silhouette 10
+    100064: silhouette 11
+    100066: silhouette 12
+    100068: silhouette 13
+    100070: silhouette 14
+    100072: silhouette 2
+    100074: silhouette 3
+    100076: silhouette 4
+    100078: silhouette 5
+    100080: silhouette 6
+    100082: silhouette 7
+    100084: silhouette 8
+    100086: silhouette 9
+    100088: train
+    100090: ushape
+    400000: capsule
+    400002: car
+    400004: cell
+    400006: chandelier
+    400008: column_B
+    400010: columnA
+    400012: cubeExtrude
+    400014: cubeExtrude2
+    400016: funnel
+    400018: hourglass
+    400020: lightStrip
+    400022: lightStrip 1
+    400024: lightStrip 10
+    400026: lightStrip 11
+    400028: lightStrip 12
+    400030: lightStrip 13
+    400032: lightStrip 14
+    400034: lightStrip 2
+    400036: lightStrip 3
+    400038: lightStrip 4
+    400040: lightStrip 5
+    400042: lightStrip 6
+    400044: lightStrip 7
+    400046: lightStrip 8
+    400048: lightStrip 9
+    400050: rocket
+    400052: //RootNode
+    400054: saucer
+    400056: scaffolding
+    400058: silhouette
+    400060: silhouette 1
+    400062: silhouette 10
+    400064: silhouette 11
+    400066: silhouette 12
+    400068: silhouette 13
+    400070: silhouette 14
+    400072: silhouette 2
+    400074: silhouette 3
+    400076: silhouette 4
+    400078: silhouette 5
+    400080: silhouette 6
+    400082: silhouette 7
+    400084: silhouette 8
+    400086: silhouette 9
+    400088: train
+    400090: ushape
+    2300000: lightStrip
+    2300002: lightStrip 1
+    2300004: lightStrip 10
+    2300006: lightStrip 11
+    2300008: lightStrip 12
+    2300010: lightStrip 13
+    2300012: lightStrip 14
+    2300014: lightStrip 2
+    2300016: lightStrip 3
+    2300018: lightStrip 4
+    2300020: lightStrip 5
+    2300022: lightStrip 6
+    2300024: lightStrip 7
+    2300026: lightStrip 8
+    2300028: lightStrip 9
+    2300030: silhouette
+    2300032: silhouette 1
+    2300034: silhouette 10
+    2300036: silhouette 11
+    2300038: silhouette 12
+    2300040: silhouette 13
+    2300042: silhouette 14
+    2300044: silhouette 2
+    2300046: silhouette 3
+    2300048: silhouette 4
+    2300050: silhouette 5
+    2300052: silhouette 6
+    2300054: silhouette 7
+    2300056: silhouette 8
+    2300058: silhouette 9
+    3300000: lightStrip
+    3300002: lightStrip 1
+    3300004: lightStrip 10
+    3300006: lightStrip 11
+    3300008: lightStrip 12
+    3300010: lightStrip 13
+    3300012: lightStrip 14
+    3300014: lightStrip 2
+    3300016: lightStrip 3
+    3300018: lightStrip 4
+    3300020: lightStrip 5
+    3300022: lightStrip 6
+    3300024: lightStrip 7
+    3300026: lightStrip 8
+    3300028: lightStrip 9
+    3300030: silhouette
+    3300032: silhouette 1
+    3300034: silhouette 10
+    3300036: silhouette 11
+    3300038: silhouette 12
+    3300040: silhouette 13
+    3300042: silhouette 14
+    3300044: silhouette 2
+    3300046: silhouette 3
+    3300048: silhouette 4
+    3300050: silhouette 5
+    3300052: silhouette 6
+    3300054: silhouette 7
+    3300056: silhouette 8
+    3300058: silhouette 9
+    4300000: lightStrip
+    4300002: silhouette
+    4300004: silhouette
+    4300006: lightStrip
+    4300008: silhouette
+    4300010: lightStrip
+    4300012: lightStrip
+    4300014: silhouette
+    4300016: silhouette
+    4300018: lightStrip
+    4300020: silhouette
+    4300022: lightStrip
+    4300024: lightStrip
+    4300026: silhouette
+    4300028: lightStrip
+    4300030: silhouette
+    4300032: silhouette
+    4300034: lightStrip
+    4300036: silhouette
+    4300038: lightStrip
+    4300040: silhouette
+    4300042: lightStrip
+    4300044: silhouette
+    4300046: lightStrip
+    4300048: silhouette
+    4300050: lightStrip
+    4300052: silhouette
+    4300054: lightStrip
+    4300056: lightStrip
+    4300058: silhouette
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
