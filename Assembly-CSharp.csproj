@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<RootNamespace></RootNamespace>
+	<ProjectGuid>{21941B6F-5AE2-E30D-7A7E-E1C9833457DE}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_2_0;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Cardboard\Scripts\Cardboard.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\CardboardEye.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\CardboardHead.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\CardboardProfile.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\CardboardUILayer.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\GazeInputModule.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\Pose3D.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\RadialUndistortionEffect.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\StereoController.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\AndroidBaseVRDevice.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\AndroidVRDevice.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\BaseVRDevice.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\VRDevice.cs" />
+     <Compile Include="Assets\Cardboard\Scripts\VRDevices\iOSVRDevice.cs" />
+     <Compile Include="Assets\MWM\DOTween\Examples\Basics.cs" />
+     <Compile Include="Assets\MWM\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\MWM\Scripts\AudioScripts\AudioManager.cs" />
+     <Compile Include="Assets\MWM\Scripts\AudioScripts\ControlAudioByRotation.cs" />
+     <Compile Include="Assets\MWM\Scripts\AudioScripts\InputManager.cs" />
+     <Compile Include="Assets\MWM\Scripts\GroundToFloor.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\DistortSphere.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\GenericPerlinObject.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\Perlin.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\PerlinPlane.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\PerlinSphere.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\ScaleSphere.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\audioShaderDistort.cs" />
+     <Compile Include="Assets\MWM\Scripts\PerlinObjects\boids.cs" />
+     <Compile Include="Assets\MWM\Scripts\Spectrum.cs" />
+     <Compile Include="Assets\scripts\audioCTRL.cs" />
+     <Compile Include="Assets\scripts\audioColorCtrl.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\AnimationSwitcher.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\ButtonPress.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\CopyRotation.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\GUIArrow.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\PodRotation.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\RepositionCamera.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\BIRD.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\ColorTextureController.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\MoveController.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Orbit.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\AnimationIntoTweenNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\RailsController.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\RailsNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\RailsNodeRollerCoaster.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\SimpleMoveNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\SimpleMoveNodeOpenDoors.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\blastOffNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\endNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\wormholeEnd.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\Rails\wormholeNode.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\RailsButton.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\TransformUniversal.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\activators.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\altitudeDeactivator.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\babyBasketShake.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\birdMixer.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\characterCrowdWave.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\deactivateAtAltitude.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\deactiveAtLessAltitude.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\disableScreenTimeout.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\elevatorControl.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\fireWorks.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\fireworksCtrl.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\flapAlternate.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\looker.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\missionCtrlCharacters.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\offsetUV.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\pingPongPaddle.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\previsTriggers.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\robo_roombahCtrl.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\setTilingOnPlanetToZero.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\skyFollowsCamera.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\switchAnimations.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\textScroller.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\BindHands.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\ChangeMaterial.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\ColorController.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\ColorTransition.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\Interactable.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\InteractionController.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\MaterialController.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\MoveUVs.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\OrientationSteering.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\RotateAstronaut.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\ScalingReticle.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\SpeedUpAnimation.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\changeBG.cs" />
+     <Compile Include="Assets\scripts\exp3\dev\randomizer.cs" />
+     <Compile Include="Assets\scripts\exp3\makeRollerCoasterWires.cs" />
+     <Compile Include="Assets\scripts\exp3\testScripts\steppedMover.cs" />
+     <Compile Include="Assets\scripts\lightStripShaderManager.cs" />
+     <Compile Include="Assets\scripts\moveForward.cs" />
+     <Compile Include="Assets\scripts\moveWayPoint.cs" />
+     <Compile Include="Assets\scripts\offsetUVS.cs" />
+     <Compile Include="Assets\scripts\playAudio.cs" />
+     <Compile Include="Assets\scripts\swirly\swirlingLights.cs" />
+     <None Include="Assets\MWM\DOTween\readme.txt" />
+     <None Include="Assets\shaders\sky.shader" />
+     <None Include="Assets\shaders\lightStrip.shader" />
+     <None Include="Assets\MWM\DOTween\DOTween43.xml" />
+     <None Include="Assets\shaders\gooShader.shader" />
+     <None Include="Assets\MWM\DOTween\DOTween46.xml" />
+     <None Include="Assets\MWM\DOTween\DOTween50.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Plugins\Legacy\Android\AndroidManifest.xml" />
+     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Cardboard\Resources\RadialUndistortionEffect.shader" />
+     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
+     <None Include="Assets\shaders\lightingModel.shader" />
+     <None Include="Assets\shaders\SunShader.shader" />
+     <None Include="Assets\shaders\glslToon.shader" />
+     <None Include="Assets\shaders\tubeShader.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/david/Documents/projects/junk/Unity/beach/Assets/MWM/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/david/Documents/projects/junk/Unity/beach/Assets/MWM/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/david/Documents/projects/junk/Unity/beach/Assets/MWM/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/david/Documents/projects/junk/Unity/beach/Assets/MWM/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{0B4BF753-03D1-BAD2-B0AA-D9F9773F50C6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

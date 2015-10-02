@@ -63,6 +63,8 @@ public class audioCTRL : MonoBehaviour {
 		rend.sharedMaterial.SetFloat ("_Speed", speed* timer);
 		rend.sharedMaterial.SetFloat ("_LightSpeed", lightSpeed);
 
+//		print (lightSpeed);
+
 		for(int i = 0 ; i < affected.Length ; i++){
 			affected[i].transform.localScale = Vector3.Scale(initScale[i],Vector3.one+scales[i]*amplitude * average (a_avg,a)*10);
 			if(affected[i].GetComponent<offsetUVS>()!=null){
