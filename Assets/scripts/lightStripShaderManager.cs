@@ -4,14 +4,17 @@ using System.Collections.Generic;
 
 public class lightStripShaderManager : MonoBehaviour {
 
+	public GameObject stripParent;
+//	public lightStrip[] strips;
+
 	List<GameObject[]> stripGroups;
-	public string[] stripMaterials;
-	public Color[] colors;
-	public float[] speed;
-	public float[] dispAmp;
-	public float[] dispSpeed;
-	public float[] dispFreq;
-	public float[] uvRepeat;
+	string[] stripMaterials;
+	Color[] colors;
+	float[] speed;
+	float[] dispAmp;
+	float[] dispSpeed;
+	float[] dispFreq;
+	float[] uvRepeat;
 
 	Renderer rend;
 	SkinnedMeshRenderer skinRend;
@@ -25,6 +28,28 @@ public class lightStripShaderManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		int a = stripParent.transform.childCount;
+//		strips = new lightStrip[a];
+
+		stripMaterials = new string[a];
+		colors = new Color[a];
+		speed = new float[a];
+		dispAmp = new float[a];
+		dispSpeed = new float[a];
+		dispFreq = new float[a];
+		uvRepeat = new float[a];
+
+		for (int i = 0; i < a; i++) {
+			lightStrip ls = stripParent.transform.GetChild(i).GetComponent<lightStrip>();
+			colors[i] = ls.shade;
+			stripMaterials[i] = ls.stripName;
+			speed[i] = ls.speed;
+			dispAmp[i] = ls.dispAmp;
+			dispSpeed[i] = ls.dispSpeed;
+			dispFreq[i] = ls.dispFreq;
+			uvRepeat[i] = ls.uvRepeat;
+		}
 
 		rend = GetComponent<Renderer> ();
 		rend.sharedMaterial.SetFloat ("_Tile", stripMaterials.Length);
@@ -97,6 +122,19 @@ public class lightStripShaderManager : MonoBehaviour {
 	}
 
 	public void updateAll(){
+
+		int a = stripParent.transform.childCount;
+	
+		for (int i = 0; i < a; i++) {
+			lightStrip ls = stripParent.transform.GetChild(i).GetComponent<lightStrip>();
+			colors[i] = ls.shade;
+			stripMaterials[i] = ls.stripName;
+			speed[i] = ls.speed;
+			dispAmp[i] = ls.dispAmp;
+			dispSpeed[i] = ls.dispSpeed;
+			dispFreq[i] = ls.dispFreq;
+			uvRepeat[i] = ls.uvRepeat;
+		}
 
 		for (int i = 0; i < stripMaterials.Length; i++) {
 			stripColors.SetPixel(i,0,colors[i]);

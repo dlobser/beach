@@ -137,6 +137,7 @@
      <Compile Include="Assets\scripts\exp3\dev\randomizer.cs" />
      <Compile Include="Assets\scripts\exp3\makeRollerCoasterWires.cs" />
      <Compile Include="Assets\scripts\exp3\testScripts\steppedMover.cs" />
+     <Compile Include="Assets\scripts\lightStrip.cs" />
      <Compile Include="Assets\scripts\lightStripShaderManager.cs" />
      <Compile Include="Assets\scripts\moveForward.cs" />
      <Compile Include="Assets\scripts\moveWayPoint.cs" />
@@ -163,11 +164,17 @@
      <None Include="Assets\shaders\SunShader.shader" />
      <None Include="Assets\shaders\glslToon.shader" />
      <None Include="Assets\shaders\tubeShader.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>/Users/david/Documents/projects/junk/Unity/beach/Assets/MWM/DOTween/DOTween.dll</HintPath>
