@@ -1,48 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/BIRD.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/swirly/swirlingLights.cs">
     <Files>
-      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/birdMixer.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/lightStrip.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/lightStripShaderManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/MWM/Scripts/AudioScripts/AudioManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/MWM/Scripts/AudioScripts/InputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/MWM/Scripts/AudioScripts/ControlAudioByRotation.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/audioColorCtrl.cs" Line="1" Column="1" />
-      <File FileName="Assets/shaders/tubeShader.shader" Line="1" Column="1" />
-      <File FileName="Assets/scripts/audioCTRL.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/offsetUVS.cs" Line="1" Column="1" />
-      <File FileName="Assets/MWM/Scripts/PerlinObjects/DistortSphere.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/moveWayPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="48" Column="34" />
-      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/boids.cs" Line="1" Column="1" />
-      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/BIRD.cs" Line="1" Column="1" />
+      <File FileName="../../deleteMe/Assets/Scripts/makeCityStreet.cs" Line="94" Column="26" />
+      <File FileName="Assets/scripts/swirly/swirlingLights.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="MWM" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="PerlinObjects" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="scripts" expanded="True" />
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Characters" expanded="True">
-                <Node name="FirstPersonCharacter" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="FirstPersonController.cs" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

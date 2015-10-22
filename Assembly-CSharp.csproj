@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_2_0;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_2_0;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;CROSS_PLATFORM_INPUT</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -66,6 +66,12 @@
      <Compile Include="Assets\MWM\Scripts\AudioScripts\ControlAudioByRotation.cs" />
      <Compile Include="Assets\MWM\Scripts\AudioScripts\InputManager.cs" />
      <Compile Include="Assets\MWM\Scripts\GroundToFloor.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\Edges\MoveEdge.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\Generics\GenericHoloEdge.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\Generics\GenericHoloModule.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\Generics\GenericHoloNode.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\HoloGraphController.cs" />
+     <Compile Include="Assets\MWM\Scripts\HoloGraph\Modules\MoveModule.cs" />
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\DistortSphere.cs" />
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\GenericPerlinObject.cs" />
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\Perlin.cs" />
@@ -75,8 +81,13 @@
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\audioShaderDistort.cs" />
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\boids.cs" />
      <Compile Include="Assets\MWM\Scripts\Spectrum.cs" />
+     <Compile Include="Assets\scripts\SHaudioCTRL.cs" />
      <Compile Include="Assets\scripts\audioCTRL.cs" />
      <Compile Include="Assets\scripts\audioColorCtrl.cs" />
+     <Compile Include="Assets\scripts\audioParticles.cs" />
+     <Compile Include="Assets\scripts\audioToBall.cs" />
+     <Compile Include="Assets\scripts\audioToLine.cs" />
+     <Compile Include="Assets\scripts\audioWhale.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\AnimationSwitcher.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\ButtonPress.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\Astronaut\CopyRotation.cs" />
@@ -114,6 +125,7 @@
      <Compile Include="Assets\scripts\exp3\animationControl\looker.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\missionCtrlCharacters.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\offsetUV.cs" />
+     <Compile Include="Assets\scripts\exp3\animationControl\offsetUVAnimate.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\pingPongPaddle.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\previsTriggers.cs" />
      <Compile Include="Assets\scripts\exp3\animationControl\robo_roombahCtrl.cs" />
@@ -143,6 +155,7 @@
      <Compile Include="Assets\scripts\moveWayPoint.cs" />
      <Compile Include="Assets\scripts\offsetUVS.cs" />
      <Compile Include="Assets\scripts\playAudio.cs" />
+     <Compile Include="Assets\scripts\rotateRandom.cs" />
      <Compile Include="Assets\scripts\swirly\swirlingLights.cs" />
      <None Include="Assets\MWM\DOTween\readme.txt" />
      <None Include="Assets\shaders\sky.shader" />
