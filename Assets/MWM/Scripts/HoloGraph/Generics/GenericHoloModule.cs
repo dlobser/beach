@@ -67,7 +67,7 @@ public class GenericHoloModule : MonoBehaviour {
 
     public virtual void moduleUpdate()
     {
-        Debug.Log("MODULEUPDATE: " + this.id + " (" + this.name + ").");
+        //Debug.Log("MODULEUPDATE: " + this.id + " (" + this.name + ").");
         this.HandleStates();
     }
 

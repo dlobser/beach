@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-namespace exp3
-{
+//namespace exp3
+//{
     public class InteractionController : MonoBehaviour
     {
 
@@ -54,4 +54,4 @@ namespace exp3
             Gizmos.DrawRay(_ray.origin, _ray.direction * interactionRange);
         }
     }
-}
+//}

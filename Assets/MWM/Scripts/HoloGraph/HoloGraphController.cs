@@ -35,7 +35,7 @@ public class HoloGraphController : MonoBehaviour {
             m.parent = this;
         }
 
-        activeNodes.Add(currentNode);
+        if (currentNode) activeNodes.Add(currentNode);
 	}
 	
 	// Update is called once per frame
@@ -55,11 +55,11 @@ public class HoloGraphController : MonoBehaviour {
             activeModules[i].moduleUpdate();
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("ButtonDown");
-            currentNode.edges[0].Activate();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Debug.Log("ButtonDown");
+        //    if (currentNode) currentNode.edges[0].Activate();
+        //}
 	}
 
 }
