@@ -43,7 +43,7 @@ public class boids : MonoBehaviour {
 					dummies[i].transform.position = Vector3.MoveTowards (dummies[i].transform.position,dummies[j].transform.position,1f/Vector3.Distance(dummies[i].transform.position,dummies[j].transform.position)*Time.deltaTime*-1f);
 			}
 			Vector3 d = dummies[i].transform.localPosition;
-			noises[i].transform.position = dummies[i].transform.position + d * noise.Noise(noiseSpeed*Time.time+d.x*noiseScale,noiseSpeed*Time.time+d.y*noiseScale,noiseSpeed*Time.time+d.z*noiseScale)*noiseAmount;
+			noises[i].transform.position = dummies[i].transform.position + d * Perlin.Noise(noiseSpeed*Time.time+d.x*noiseScale,noiseSpeed*Time.time+d.y*noiseScale,noiseSpeed*Time.time+d.z*noiseScale)*noiseAmount;
             birds[i].transform.position = Vector3.Lerp(birds[i].transform.position,noises[i].transform.position,moveSpeed);
 		}
 	

@@ -19,7 +19,9 @@ using System.Collections;
         void Start()
         {
 //            _interactionController = GameObject.FindObjectOfType<InteractionController>();
-		t = GetComponent<Transform> ().gameObject;    
+//		t = transform.gameObject;
+		t = GetComponent<Transform> ().gameObject;
+
 		_originalScale = t.transform.localScale;
             t.transform.localScale = Vector3.zero;
 
@@ -29,10 +31,12 @@ using System.Collections;
 		t.transform.localScale = Vector3.Lerp(t.transform.localScale, _originalScale, Time.deltaTime * scaleInSpeed);
 	}
 		public static void falseTarget(){
+//		print (t);
 		t.transform.localScale = Vector3.Lerp(t.transform.localScale, Vector3.zero, Time.deltaTime * scaleOutSpeed);
 	}
         void Update()
         {
+
 //			print (targeting);
 //            if (lerp)
 //            {

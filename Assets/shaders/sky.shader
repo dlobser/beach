@@ -76,7 +76,7 @@ Properties{
             float newOpacity = pow(abs(dot(viewDirection, normalDirection)),1.5)*1.8;
             float dropoff = max(min(1.0,distance(pos.xyz,_WorldSpaceCameraPos)*.001),0.0);
             vec4 tex = texture2D(_MainTex,uv*_Tile);//*newOpacity*_Color;
-           gl_FragColor = tex*dropoff*newOpacity*_Color;//*mix(vec4(0,.7,1.0,1.0),vec4(0,0,.8,1.0),);//*(vec4(1,.20,1,0)+tex)*vec4(vec3(1.0),newOpacity) ;
+           gl_FragColor = tex*newOpacity*_Color;//*mix(vec4(0,.7,1.0,1.0),vec4(0,0,.8,1.0),);//*(vec4(1,.20,1,0)+tex)*vec4(vec3(1.0),newOpacity) ;
 
 //            gl_FragColor = vec4(tex.xyz,newOpacity);
          }

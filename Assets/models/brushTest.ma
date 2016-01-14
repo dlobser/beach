@@ -1,0 +1,258 @@
+//Maya ASCII 2014 scene
+//Name: brushTest.ma
+//Last modified: Sun, Nov 08, 2015 11:15:03 AM
+//Codeset: UTF-8
+requires maya "2014";
+currentUnit -l centimeter -a degree -t film;
+fileInfo "application" "maya";
+fileInfo "product" "Maya 2014";
+fileInfo "version" "2014";
+fileInfo "cutIdentifier" "201310090405-890429";
+fileInfo "osv" "Mac OS X 10.9";
+createNode transform -n "strokeBrush11";
+createNode stroke -n "strokeShapeBrush11" -p "strokeBrush11";
+	setAttr -k off ".v" no;
+	setAttr ".dpc" 100;
+	setAttr ".mvbs" 114;
+	setAttr ".mpl" 100000;
+	setAttr ".sdn" 0.15267175650721743;
+	setAttr ".usn" yes;
+	setAttr ".nml" -type "double3" 0 1 0 ;
+	setAttr ".pcv[0].smp" 122;
+	setAttr ".spm1" 5;
+	setAttr ".spm2" 1;
+	setAttr ".psc[0]"  0 1 1;
+	setAttr -s 122 ".psr[0:121]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+createNode transform -n "curveBrush1";
+	setAttr ".v" no;
+createNode nurbsCurve -n "curveBrushShape1" -p "curveBrush1";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		2 120 0 no 3
+		123 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+		 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53
+		 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80
+		 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105
+		 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 120
+		122
+		-2.1422699999999999 0 0.69763399999999998
+		-1.9780310000000001 0 0.61263699999999999
+		-1.8132680000000001 0 0.54269900000000004
+		-1.607181 0 0.46007300000000001
+		-1.3644350000000001 0 0.37728
+		-1.0727230000000001 0 0.30981399999999998
+		-0.90873300000000001 0 0.284972
+		-0.73606899999999997 0 0.266287
+		-0.55737599999999998 0 0.25392799999999999
+		-0.37536199999999997 0 0.24806400000000001
+		-0.190412 0 0.24875700000000001
+		-0.0029234700000000001 0 0.25605899999999998
+		0.186698 0 0.27001500000000001
+		0.37803700000000001 0 0.290657
+		0.56855 0 0.31719799999999998
+		0.75568299999999999 0 0.34883999999999998
+		0.93688099999999996 0 0.38477
+		1.1095919999999999 0 0.42417100000000002
+		1.273636 0 0.46586699999999998
+		1.4288749999999999 0 0.508687
+		1.5752109999999999 0 0.55146499999999998
+		1.7125809999999999 0 0.59304400000000002
+		1.957084 0 0.68237899999999996
+		2.1552920000000002 0 0.79595499999999997
+		2.3018230000000002 0 0.94496199999999997
+		2.3936920000000002 0 1.132468
+		2.4339219999999999 0 1.3578330000000001
+		2.431378 0 1.6170279999999999
+		2.3941240000000001 0 1.9022159999999999
+		2.329189 0 2.2023959999999998
+		2.2433130000000001 0 2.5106290000000002
+		2.1428560000000001 0 2.823671
+		2.0316239999999999 0 3.1358199999999998
+		1.910957 0 3.4393090000000002
+		1.780592 0 3.7359599999999999
+		1.6390610000000001 0 4.0357599999999998
+		1.477665 0 4.3386230000000001
+		1.2809170000000001 0 4.6356999999999999
+		1.054181 0 4.9106129999999997
+		0.82092600000000004 0 5.1410489999999998
+		0.58538800000000002 0 5.3272979999999999
+		0.33561299999999999 0 5.4889039999999998
+		0.20471800000000001 0 5.5630350000000002
+		0.071585499999999996 0 5.6316189999999997
+		-0.062550499999999995 0 5.6938769999999996
+		-0.196524 0 5.7490550000000002
+		-0.330009 0 5.7971019999999998
+		-0.46269500000000002 0 5.8379580000000004
+		-0.59428800000000004 0 5.8715479999999998
+		-0.72450499999999995 0 5.8977890000000004
+		-0.85206599999999999 0 5.9178670000000002
+		-0.97568200000000005 0 5.9329340000000004
+		-1.0940540000000001 0 5.9441160000000002
+		-1.20587 0 5.9525180000000004
+		-1.311407 0 5.9589639999999999
+		-1.504596 0 5.969233
+		-1.6746909999999999 0 5.9804560000000002
+		-1.8190770000000001 0 5.9928179999999998
+		-1.935945 0 6.0053809999999999
+		-2.0738750000000001 0 6.019164
+		-2.1879520000000001 0 6.0291439999999996
+		-2.2949830000000002 0 6.0473970000000001
+		-2.4251269999999998 0 6.0643330000000004
+		-2.5511469999999998 0 6.0751340000000003
+		-2.6564420000000002 0 6.0910450000000003
+		-2.7856079999999999 0 6.1104849999999997
+		-2.886898 0 6.1239650000000001
+		-2.9929739999999998 0 6.1434430000000004
+		-3.1022289999999999 0 6.1690880000000003
+		-3.2184539999999999 0 6.1960509999999998
+		-3.3427699999999998 0 6.2238389999999999
+		-3.4735499999999999 0 6.2562119999999997
+		-3.6076570000000001 0 6.2938020000000003
+		-3.7406280000000001 0 6.3342109999999998
+		-3.8724270000000001 0 6.3811169999999997
+		-4.0070379999999997 0 6.4440010000000001
+		-4.1414749999999998 0 6.5240970000000003
+		-4.2664410000000004 0 6.6148230000000003
+		-4.3790449999999996 0 6.713597
+		-4.4823399999999998 0 6.8215589999999997
+		-4.5734069999999996 0 6.9380050000000004
+		-4.6437280000000003 0 7.0605950000000002
+		-4.6937680000000004 0 7.1852
+		-4.7325080000000002 0 7.3059779999999996
+		-4.774769 0 7.4741549999999997
+		-4.7932189999999997 0 7.6287310000000002
+		-4.79068 0 7.7847379999999999
+		-4.7539720000000001 0 7.9385700000000003
+		-4.7017009999999999 0 8.0355129999999999
+		-4.6255819999999996 0 8.1301070000000006
+		-4.527469 0 8.2224889999999995
+		-4.4120210000000002 0 8.3108039999999992
+		-4.2834500000000002 0 8.394031
+		-4.1455780000000004 0 8.4719370000000005
+		-4.0026219999999997 0 8.5423570000000009
+		-3.8591229999999999 0 8.6012559999999993
+		-3.7177790000000002 0 8.6420010000000005
+		-3.5793279999999998 0 8.6553039999999992
+		-3.4436149999999999 0 8.6391360000000006
+		-3.3099620000000001 0 8.5986999999999991
+		-3.1791909999999999 0 8.5393889999999999
+		-3.0537040000000002 0 8.4669749999999997
+		-2.9350719999999999 0 8.3814879999999992
+		-2.8237260000000002 0 8.2768289999999993
+		-2.719484 0 8.1547040000000006
+		-2.6218149999999998 0 8.0253350000000001
+		-2.5316209999999999 0 7.8914390000000001
+		-2.4510399999999999 0 7.7474930000000004
+		-2.3800430000000001 0 7.5890279999999999
+		-2.316354 0 7.4126839999999996
+		-2.2640310000000001 0 7.2221039999999999
+		-2.2340439999999999 0 7.0289869999999999
+		-2.2298840000000002 0 6.8356870000000001
+		-2.246896 0 6.6337999999999999
+		-2.2825139999999999 0 6.4259430000000002
+		-2.3363149999999999 0 6.2272290000000003
+		-2.4043860000000001 0 6.0460909999999997
+		-2.4792519999999998 0 5.8832469999999999
+		-2.5545789999999999 0 5.7389169999999998
+		-2.6253060000000001 0 5.6128410000000004
+		-2.7136480000000001 0 5.461449
+		-2.7860900000000002 0 5.326397
+		;
+createNode transform -n "brush2MeshGroup";
+createNode transform -n "brush2Main" -p "brush2MeshGroup";
+createNode mesh -n "brush2MainShape" -p "brush2Main";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode brush -n "brush2";
+	setAttr ".gsc" 5;
+	setAttr ".dep" yes;
+	setAttr ".bwd" 0.0001;
+	setAttr ".rll" yes;
+	setAttr ".lcl[0]"  0 0.5 1;
+	setAttr ".pcl[0]"  0 0.5 1;
+	setAttr ".wsc[0]"  0 1 1;
+	setAttr ".lws[0]"  0 1 1;
+	setAttr ".pws[0]"  0 1 1;
+	setAttr ".tls[0]"  0 1 1;
+	setAttr -s 3 ".env";
+	setAttr ".env[0].envp" 0.20000000298023224;
+	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
+	setAttr ".env[0].envi" 2;
+	setAttr ".env[1].envp" 0.5;
+	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
+	setAttr ".env[1].envi" 2;
+	setAttr ".env[2].envp" 1;
+	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
+	setAttr ".env[2].envi" 2;
+	setAttr ".rro[0]"  0 1 1;
+createNode materialInfo -n "materialInfo1";
+createNode shadingEngine -n "brush2ShaderSG";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode phong -n "brush2Shader";
+	setAttr ".c" -type "float3" 0 0 0 ;
+	setAttr ".tc" 0.20000000298023224;
+	setAttr ".tcf" 0;
+	setAttr ".trsd" 1;
+	setAttr ".fakc" 0;
+	setAttr ".sc" -type "float3" 0 0 0 ;
+	setAttr ".cp" 10;
+createNode lightLinker -s -n "lightLinker1";
+	setAttr -s 3 ".lnk";
+	setAttr -s 3 ".slnk";
+select -ne :time1;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
+select -ne :renderPartition;
+	setAttr -s 3 ".st";
+select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
+	setAttr ".ro" yes;
+select -ne :initialParticleSE;
+	setAttr ".ro" yes;
+select -ne :defaultShaderList1;
+	setAttr -s 3 ".s";
+select -ne :postProcessList1;
+	setAttr -s 2 ".p";
+select -ne :defaultRenderingList1;
+select -ne :renderGlobalsList1;
+select -ne :defaultResolution;
+	setAttr ".pa" 1;
+select -ne :hardwareRenderGlobals;
+	setAttr ".ctrs" 256;
+	setAttr ".btrs" 512;
+select -ne :hardwareRenderingGlobals;
+	setAttr ".otfna" -type "stringArray" 18 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surfaces" "Particles" "Fluids" "Image Planes" "UI:" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Misc. UI" "Ornaments"  ;
+	setAttr ".otfva" -type "Int32Array" 18 0 1 1 1 1 1
+		 1 0 0 0 0 0 0 0 0 0 0 0 ;
+select -ne :defaultHardwareRenderGlobals;
+	setAttr ".fn" -type "string" "im";
+	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
+connectAttr "brush2.obr" "strokeShapeBrush11.brs";
+connectAttr "curveBrushShape1.ws" "strokeShapeBrush11.pcv[0].crv";
+connectAttr "strokeShapeBrush11.wmm" "brush2MainShape.i";
+connectAttr ":time1.o" "brush2.tim";
+connectAttr "brush2ShaderSG.msg" "materialInfo1.sg";
+connectAttr "brush2Shader.msg" "materialInfo1.m";
+connectAttr "brush2Shader.oc" "brush2ShaderSG.ss";
+connectAttr "brush2MainShape.iog" "brush2ShaderSG.dsm" -na;
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "brush2ShaderSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "brush2ShaderSG.message" ":defaultLightSet.message";
+connectAttr "brush2ShaderSG.pa" ":renderPartition.st" -na;
+connectAttr "brush2Shader.msg" ":defaultShaderList1.s" -na;
+// End of brushTest.ma
