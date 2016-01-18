@@ -9,15 +9,17 @@ public class tubeTunnel : MonoBehaviour {
 	public float depth = 4;
 
 	private GameObject[] tubes;
-
+	public GameObject container;
 	// Use this for initialization
 	void Start () {
+		if (container == null)
+			container = new GameObject ();
 		tubes = new GameObject[amount];
 
 		for (int i = 0; i < amount; i++) {
 			tubes[i] = Instantiate(tube,new Vector3(Mathf.Sin(i*.33f)*3,Mathf.Cos (i*.54f)*3,i*depth),Quaternion.identity) as GameObject;
 			tubes[i].transform.Rotate(0,0,i*90);
-
+			tubes [i].transform.parent = container.transform;
 			for(int j = 0 ; j < 3 ; j++){
 				tubes[i].transform.GetChild(0).transform.parent = transform;
 			}

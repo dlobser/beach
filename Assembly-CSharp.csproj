@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -83,9 +83,11 @@
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\audioShaderDistort.cs" />
      <Compile Include="Assets\MWM\Scripts\PerlinObjects\boids.cs" />
      <Compile Include="Assets\MWM\Scripts\Spectrum.cs" />
+     <Compile Include="Assets\athon\scripts\Dials.cs" />
+     <Compile Include="Assets\athon\scripts\Singleton.cs" />
      <Compile Include="Assets\athon\scripts\UIMidi.cs" />
      <Compile Include="Assets\athon\scripts\blitter.cs" />
-     <Compile Include="Assets\athon\scripts\dials.cs" />
+     <Compile Include="Assets\athon\scripts\midiLaserID.cs" />
      <Compile Include="Assets\athon\scripts\midiLaserer.cs" />
      <Compile Include="Assets\athon\scripts\pingPonger.cs" />
      <Compile Include="Assets\athon\scripts\wireFrameAthon.cs" />
@@ -175,6 +177,7 @@
      <Compile Include="Assets\scripts\exp3\dev\randomizer.cs" />
      <Compile Include="Assets\scripts\exp3\makeRollerCoasterWires.cs" />
      <Compile Include="Assets\scripts\exp3\testScripts\steppedMover.cs" />
+     <Compile Include="Assets\scripts\interactingPop.cs" />
      <Compile Include="Assets\scripts\lgtMove.cs" />
      <Compile Include="Assets\scripts\lgtMoveShader.cs" />
      <Compile Include="Assets\scripts\lgtRot.cs" />
@@ -200,6 +203,8 @@
      <Compile Include="Assets\scripts\particleTestForPoles.cs" />
      <Compile Include="Assets\scripts\playAudio.cs" />
      <Compile Include="Assets\scripts\randomRotation.cs" />
+     <Compile Include="Assets\scripts\reset.cs" />
+     <Compile Include="Assets\scripts\resetTransform.cs" />
      <Compile Include="Assets\scripts\rotateRandom.cs" />
      <Compile Include="Assets\scripts\rotateY.cs" />
      <Compile Include="Assets\scripts\rotateZ.cs" />
@@ -231,9 +236,12 @@
      <None Include="Assets\shaders\sky.shader" />
      <None Include="Assets\shaders\lightStrip.shader" />
      <None Include="Assets\athon\shaders\unlitTrans.shader" />
+     <None Include="Assets\athon\data\old1\data_7.txt" />
      <None Include="Assets\MWM\DOTween\DOTween43.xml" />
      <None Include="Assets\shaders\lineShader.shader" />
+     <None Include="Assets\athon\data\data_3.txt" />
      <None Include="Assets\shaders\gooShader.shader" />
+     <None Include="Assets\athon\data\data_1.txt" />
      <None Include="Assets\shaders\unlit2.shader" />
      <None Include="Assets\shaders\lineMat.shader" />
      <None Include="Assets\shaders\lineMatOrient.shader" />
@@ -242,7 +250,10 @@
      <None Include="Assets\shaders\facingShader.shader" />
      <None Include="Assets\shaders\lineMatOrientGLSL.shader" />
      <None Include="Assets\athon\shaders\unlitTransHalf.shader" />
+     <None Include="Assets\athon\data\old1\data_2.txt" />
+     <None Include="Assets\athon\data\old1\data_6.txt" />
      <None Include="Assets\shaders\unlit2GLSL.shader" />
+     <None Include="Assets\athon\data\data_5.txt" />
      <None Include="Assets\Caustics\Blit_Caustics.shader" />
      <None Include="Assets\athon\shaders\velocity.shader" />
      <None Include="Assets\athon\shaders\worldPosition.shader" />
@@ -251,15 +262,22 @@
      <None Include="Assets\MWM\DOTween\DOTween50.xml" />
      <None Include="Assets\shaders\NewUnlitShader.shader" />
      <None Include="Assets\shaders\simple2.shader" />
+     <None Include="Assets\athon\data\old1\data_4.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\shaders\facingShaderGLSL.shader" />
      <None Include="Assets\artPackages\thomasHeart\tubeShader.shader" />
+     <None Include="Assets\athon\data\data_6.txt" />
      <None Include="Assets\athon\shaders\pingUnlit.shader" />
+     <None Include="Assets\athon\data\old1\data_3.txt" />
      <None Include="Assets\athon\shaders\gravity.shader" />
      <None Include="Assets\athon\shaders\simpleSin.shader" />
      <None Include="Assets\Plugins\Legacy\Android\AndroidManifest.xml" />
+     <None Include="Assets\athon\data\old1\data_1.txt" />
+     <None Include="Assets\athon\data\old1\data_5.txt" />
+     <None Include="Assets\athon\data\data_4.txt" />
      <None Include="Assets\athon\shaders\particleBillboard.shader" />
+     <None Include="Assets\athon\data\data_2.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\shaders\distancePulse.shader" />
      <None Include="Assets\midi\unity-midi-input\Assets\Font\OFL.txt" />
@@ -267,6 +285,7 @@
      <None Include="Assets\athon\shaders\$GS Billboard (1).shader" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\shaders\unlit.shader" />
+     <None Include="Assets\athon\data\old1\data_0.txt" />
      <None Include="Assets\athon\shaders\noiseSimplex.cginc" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\shaders\lookAtMe.shader" />
@@ -276,10 +295,12 @@
      <None Include="Assets\shaders\lightingModel.shader" />
      <None Include="Assets\shaders\skyCG.shader" />
      <None Include="Assets\shaders\SunShader.shader" />
+     <None Include="Assets\athon\data\data_0.txt" />
      <None Include="Assets\athon\shaders\uv.shader" />
      <None Include="Assets\shaders\glslToon.shader" />
      <None Include="Assets\athon\shaders\addEmTogether.shader" />
      <None Include="Assets\shaders\tubeShader.shader" />
+     <None Include="Assets\athon\data\data_7.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

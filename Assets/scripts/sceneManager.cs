@@ -10,6 +10,7 @@ public class sceneManager : MonoBehaviour {
 			scenes[i].SetActive(false);
 		}
 		scenes [sc].SetActive (true);
+		scenes [sc].BroadcastMessage ("reset");
 	}
 	// Use this for initialization
 	void Start () {

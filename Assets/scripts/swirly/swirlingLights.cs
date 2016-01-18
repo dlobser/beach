@@ -22,11 +22,16 @@ public class swirlingLights : MonoBehaviour {
 	public float lengthHigh = 10;
 	public float variationSpeed = .01f;
 
+	public GameObject container;
+
 	// Use this for initialization
 	void Start () {
+		if (container == null)
+			container = new GameObject ();
 		points = new GameObject[amount];
 		for (int i = 0; i < amount; i++) {
 			points[i] = new GameObject();
+			points [i].transform.parent = container.transform;
 			points[i].transform.position = new Vector3(Random.value*20f,Random.value*20,Random.value*20);
 			TrailRenderer TR = points[i].AddComponent<TrailRenderer>();
 			TR.material = mat;

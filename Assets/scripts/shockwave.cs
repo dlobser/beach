@@ -13,18 +13,23 @@ public class shockwave : MonoBehaviour {
 	public float frequency = 1;
 	public float displace = 1;
 	public float scaleY = 0;
+	public GameObject container;
 
 	bool end = false;
 	float count = 0;
 	// Use this for initialization
 	void Start () {
+		if (container == null)
+			container = new GameObject ();
 		mat = quad.GetComponent<Renderer> ().sharedMaterial;
 		audParent = new GameObject ();
+		audParent.transform.parent = container.transform;
 		aud.transform.parent = audParent.transform;
 		aud.transform.localPosition = new Vector3 (0, 0, 1);
 		for (int i = 0; i < amount; i++) {
 			Vector3 rand = Random.insideUnitSphere;
 			GameObject t = Instantiate(quad,Vector3.Scale(rand*extent,new Vector3(1,scaleY,1)),Quaternion.identity) as GameObject;
+			t.transform.parent = container.transform;
 			t.transform.LookAt(Vector3.zero);
 		}
 	}

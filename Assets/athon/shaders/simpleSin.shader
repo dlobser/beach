@@ -106,7 +106,7 @@
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				
 				
-				float d = max(distance(col2.xyz,_Pos.xyz)*10,50.0);
+				float d = max(distance(col2.xyz,_Pos.xyz)*50,50.0);
 				float t = _Time.y*_Speed;//*(1.+d*.1);
 //				float sn = snoise(col+_Time.y*_Speed);		
 	
@@ -117,7 +117,7 @@
 //				
 //				return float4(curl(col.xyz*.3,_Time.x*_Speed),1.0);
 				fixed4 delt = normalize(_Pos-col2);
-				float4 gravity = vel+delt/d;;
+				float4 gravity = vel+delt*5./d;;
 //				return // qgravity;
 				float4 noisy =  ((lerp(float4(
 //				sin(col.x*_Freq*_Speeds.x),

@@ -10,16 +10,32 @@ public class UIMidi : MonoBehaviour {
 	Slider[] sliders;
 	public float spacing = 1;
 	bool setMin = false;
+	Dials d;
+	public float mult;
 
 	// Use this for initialization
 	void Start () {
-		sliders = new Slider[10];
-		for (int i = 0; i < 10; i++) {
+		d = Dials.Instance;
+		d.checkDials (true);
+		sliders = new Slider[9*2*2];
+		int j = 0;
+		int k = 0;
+		float q = 0;
+		for (int i = 0; i < 9*2*2; i++) {
+			if (i %9==0)
+				q += spacing;
+			
 			sliders[i] = Instantiate (slider);
 			sliders[i].transform.parent = slider.transform.parent;
 			sliders[i].transform.localPosition = slider.transform.localPosition;
-			sliders[i].transform.Translate (new Vector3 (i*spacing, 0, 0));
+			sliders[i].transform.Translate (new Vector3 (j*spacing+q, k*100, 0));
 			sliders[i].maxValue = i+1;
+			j++;
+			if (j > 17) {
+				j = 0;
+				k++;
+				q = 0;
+			}
 		}
 
 		values = new float[1000];
@@ -28,14 +44,25 @@ public class UIMidi : MonoBehaviour {
 //	// Update is called once per frame
 	void Update () {
 		if (!setMin) {
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 9*2*2; i++) {
 				sliders[i].minValue = i;//(float)i + 1f;
-				print(sliders[i].minValue);
+				setKnob(sliders[i].value*mult);
 			}
 			setMin = true;
 		}
-		for (int i = 0; i < 10; i++) {
-			setKnob(sliders[i].value);//(float)i + 1f;
+		for (int i = 0; i < 9*2*2; i++) {
+			if(!values[i].Equals(sliders[i].value*mult)){
+				setKnob(sliders[i].value*mult);//(float)i + 1f;
+
+			}
+		}
+		int q = -1;
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 9; j++) {
+				d.dials [i, j] = values [++q];
+				d.knobs [i, j] = values [q+18];
+
+			}
 		}
 	}
 

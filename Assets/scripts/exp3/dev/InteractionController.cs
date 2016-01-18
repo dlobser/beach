@@ -13,10 +13,14 @@ using System.Collections;
 
         private Interactable _interactableObject;
         public bool interacting;
+		Interactable b;
 
         void Start()
         {
-
+			GameObject n = new GameObject ();
+			n.AddComponent<Interactable>();
+			b = n.GetComponent<Interactable> ();
+		GameObject.Destroy(n);
         }
 
         void Update()
@@ -25,19 +29,23 @@ using System.Collections;
             if (Physics.Raycast(_ray, out _hit, interactionRange))
             {
                 Interactable i = _hit.transform.GetComponent<Interactable>();
-                if (i)
-                {
-                    if (_interactableObject != null && !i.Equals(_interactableObject))
-                    {
-                        _interactableObject.interacting = false;
-                        this.interacting = false;
-                    }
+			print (i);
+			if (i) {
+				if (_interactableObject != null && !i.Equals (_interactableObject)) {
+					_interactableObject.interacting = false;
+					this.interacting = false;
+				}
 
-                    _interactableObject = _hit.transform.GetComponent<Interactable>();
-                    this.interacting = true;
-                    _interactableObject.interacting = true;
-                    _interactableObject.interactPosition = _hit.point;
-                }
+				_interactableObject = _hit.transform.GetComponent<Interactable> ();
+				this.interacting = true;
+				_interactableObject.interacting = true;
+				_interactableObject.interactPosition = _hit.point;
+				b = i;
+			} 
+			else
+				b.interacting = false;
+
+				
             }
             else if (_interactableObject)
             {
