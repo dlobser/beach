@@ -29,7 +29,6 @@ using System.Collections;
             if (Physics.Raycast(_ray, out _hit, interactionRange))
             {
                 Interactable i = _hit.transform.GetComponent<Interactable>();
-			print (i);
 			if (i) {
 				if (_interactableObject != null && !i.Equals (_interactableObject)) {
 					_interactableObject.interacting = false;

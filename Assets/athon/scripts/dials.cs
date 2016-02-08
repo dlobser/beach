@@ -15,6 +15,11 @@ public class Dials : Singleton<Dials> {
 	public float[,] prevKnobs;
 	public float[,] buttons;
 
+	public string buffer;
+
+	public float[] timeBuffer;
+	public string[] presetBuffer;
+
 	int[] dialID = { 14, 15, 16, 17, 18, 19, 20, 21, 22,
 	57,58,59,60,61,62,63,65,66,
 	94,95,96,97,102,103,104,105,106};
@@ -26,6 +31,7 @@ public class Dials : Singleton<Dials> {
 	int[] buttonID;
 	
 	void Awake () {
+		buffer = "";
 		buttonID = new int[18];
 		for (int i = 0; i < 18; i++) {
 			int extra = 23;
@@ -51,13 +57,13 @@ public class Dials : Singleton<Dials> {
 //					print (dialID [q]);
 //					print ("fuh: " + MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime) + ","+
 //						dials[i,j]+","+i+","+j);
-					dials [i, j] = ( MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime) * mult);
+					dials [i, j] = (( MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime)* mult)) ;
 					prevDials [i, j] = ( MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime) * mult);
 
 				}
 				if (refresh||!(MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime)*mult).Equals(prevKnobs [i, j])) {
 //					print ("fuh: " + MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime) + ","+knobs[i,j]+","+i+","+j);
-					knobs [i, j] = ( MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime) * mult);
+					knobs [i, j] = (( MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime)* mult)) ;
 					prevKnobs [i, j] = ( MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime) * mult);
 
 
@@ -70,24 +76,44 @@ public class Dials : Singleton<Dials> {
 				}
 			}
 		}
-
 	}
+
+	public void makeBuffer(){
+		buffer += ":"+Time.time+":";
+		buffer += recordDials();
+		Debug.Log (buffer);
+	}
+
+	public void readBuffer(string s){
+		string[] first = s.Split (new string[] { ":" }, System.StringSplitOptions.None);
+		timeBuffer = new float[first.Length / 2];
+		presetBuffer = new string[first.Length / 2];
+		Debug.Log (first[1]);
+		Debug.Log (s);
+		int q = 0;
+		for (int i = 0; i < first.Length/2; i++) {
+			timeBuffer [i] = float.Parse(first [++q]);
+			presetBuffer [i] = first [++q];
+		}
+	}
+
+
 	public string recordDials () {
 		string s = "";
 		s += parser(dials);
 		s += ",";
 		s += parser(knobs);
-		print (s);
+//		print (s);
 		return s;
 
 	}
 	public void readDials(string s){
 		if (s != null) {
-			print (s);
+//			print (s);
 			if (s.Length > 0) {
 				string[] first = s.Split (new string[] { ",," }, System.StringSplitOptions.None);
-				print (first [0]);
-				print (first [1]);
+//				print (first [0]);
+//				print (first [1]);
 				string[] dial = first [0].Split (new string[] { "," }, System.StringSplitOptions.None);
 				string[] knob = first [1].Split (new string[] { "," }, System.StringSplitOptions.None);
 				int q = -1;

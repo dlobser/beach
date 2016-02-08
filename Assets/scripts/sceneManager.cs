@@ -4,6 +4,7 @@ using System.Collections;
 public class sceneManager : MonoBehaviour {
 
 	public GameObject[] scenes;
+	public int firstScene = 7;
 
 	public void sceneSwitch(int sc){
 		for (int i = 0; i < scenes.Length; i++) {
@@ -14,8 +15,8 @@ public class sceneManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-
-		sceneSwitch (0);
+		Cursor.visible = false;
+		sceneSwitch (firstScene);
 	}
 	
 	// Update is called once per frame

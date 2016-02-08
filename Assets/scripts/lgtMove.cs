@@ -11,7 +11,7 @@ public class lgtMove : MonoBehaviour {
 	float initSpeed,initDistance,initIncrease,initCount;
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		initSpeed = speed;
 		initDistance = distance;
 		initIncrease = increase;

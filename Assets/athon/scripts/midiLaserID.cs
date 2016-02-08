@@ -19,8 +19,19 @@ public class midiLaserID : MonoBehaviour {
 	public GameObject noise;
 	public GameObject wire;
 
+	public TextAsset[] texts;
+
+	public string sessionName = "first";
+
 	public GameObject[] things;
 	int whichThing = 0;
+
+	bool recording = false;
+	bool buffered = false;
+	bool playing = false;
+	int playCounter = 0;
+	float startTime = 0;
+	float startBufferTime = 0 ;
 
 	Vector3 initInit;
 	Dials d;
@@ -34,6 +45,8 @@ public class midiLaserID : MonoBehaviour {
 	string[] presets;
 
 	void Start () {
+		Application.targetFrameRate = 30;
+
 		presets = new string[8];
 		d = Dials.Instance;
 		d.mult = mult;
@@ -80,7 +93,8 @@ public class midiLaserID : MonoBehaviour {
 	}
 
 	void Update () {
-		d.checkDials (false);
+		if(!playing)
+			d.checkDials (false);
 		if (MidiInput.GetKnob (45,MidiInput.Filter.Realtime) > .5f) {
 			recordMode = false;
 			print (recordMode);
@@ -91,10 +105,10 @@ public class midiLaserID : MonoBehaviour {
 		}
 		if (MidiInput.GetKnob (47, MidiInput.Filter.Realtime) > .5f) {
 			for (int i = 0; i < 8; i++) {
-				string s = System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt");
+				string s = texts [i].text;// System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt");
 				print (s);
-				presets[i] = (System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt"));
-				d.readDials (System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt"));
+				presets [i] = s;//(System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt"));
+				d.readDials ( s);//(System.IO.File.ReadAllText ("Assets/athon/data/data_" + i + ".txt"));
 			}
 		}
 		if (MidiInput.GetKnob (48, MidiInput.Filter.Realtime) > .5f) {
@@ -103,7 +117,46 @@ public class midiLaserID : MonoBehaviour {
 
 			}
 		}
-
+		if (Input.GetKeyUp (KeyCode.R)) {
+			recording = !recording;
+			Debug.Log (recording);
+		}
+		if (recording) {
+			d.makeBuffer ();
+		}
+		if (Input.GetKeyUp (KeyCode.S)) {
+			Debug.Log (d.buffer);
+			System.IO.File.WriteAllText ("Assets/athon/data/session_" + sessionName + ".txt",d.buffer);
+		}
+		if (Input.GetKeyUp (KeyCode.P)) {
+			if (!buffered) {
+				d.readBuffer(System.IO.File.ReadAllText ("Assets/athon/data/session_" + sessionName + ".txt"));
+				buffered = true;
+			}
+			playing = !playing;
+			startTime = Time.time;
+			startBufferTime = d.timeBuffer [0];
+			Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = true;
+			Camera.main.gameObject.GetComponent<CaptureStandard> ().captureSettings.recordMode = true;
+		}
+		if (playing) {
+			if (playCounter < d.timeBuffer.Length - 1) {
+				if (Time.time - startTime > d.timeBuffer [playCounter] - startBufferTime) {
+					d.readDials (d.presetBuffer [playCounter]);
+				}
+				while (d.timeBuffer [playCounter] - startBufferTime < Time.time - startTime) {
+					playCounter++;
+				}
+			} else {
+				playing = false;
+				Debug.Log ("playtime is OVER!");
+				Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = false;
+			}
+			if (Input.GetKeyUp (KeyCode.O)) {
+				playing = !playing;
+				Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = false;
+			}
+		}
 //		print (MidiInput.GetKnob (14));
 				
 		float t = Time.deltaTime;
@@ -113,7 +166,7 @@ public class midiLaserID : MonoBehaviour {
 //			nob2[i] = MidiInput.GetKnob(i,MidiInput.Filter.Realtime)*mult;
 //		}
 
-		Camera.main.transform.localPosition = new Vector3 (0, 0, Mathf.Pow(d.knobs[1,2]*.1f,2) * -5f);
+		Camera.main.transform.localPosition = new Vector3 (0, 0, Mathf.Pow(d.knobs[1,2]*.1f,3) * -5f);
 		Camera.main.transform.parent.transform.Rotate (0, d.knobs[1,3] * -.1f*t*60,0);
 
 		objSwitcher ();

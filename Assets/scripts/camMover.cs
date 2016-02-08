@@ -10,6 +10,9 @@ public class camMover : MonoBehaviour {
 	public float startPos = -100f;
 	public float endPos = 0f;
 	public float border = 300;
+
+	float initSpeed,initMinSpeed,initSlow,initStartPos,initEndPos,initBorder;
+
 	GameObject aimer;
 	Transform kid; 
 //	Transform kid2;
@@ -22,7 +25,9 @@ public class camMover : MonoBehaviour {
 
 	// Use this for initialization
 
-	void Start () {
+	void Awake () {
+
+
 
 //		OVRDevice.ResetOrientation ();	
 
@@ -37,6 +42,15 @@ public class camMover : MonoBehaviour {
 		print ("aimer");
 		print (aimer);
 
+		initSpeed = speed;
+		initMinSpeed = minSpeed;
+
+	}
+
+	void reset(){
+		print (initSpeed);
+		speed = initSpeed;
+		minSpeed = initSpeed;
 	}
 
 	void CheckProximity(){

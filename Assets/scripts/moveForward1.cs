@@ -20,6 +20,7 @@ public class moveForward1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetButton("Fire1")|| Input.GetMouseButtonUp(0)||Input.GetMouseButtonDown(0)) {  
+			print (speed);
 			aimer = Vector3.Lerp (aimer, Camera.main.transform.forward, .1f);
 			if(speed<maxSpeed)
 				speed+=acceleration*Time.deltaTime;

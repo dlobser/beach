@@ -11,9 +11,17 @@ public class interactableMetronome : Interactable {
 	public float maxRotate = 30;
 	float rotAmount = 0;
 	bool interacted = false;
+	float amountSeed = 0;
+	float speedSeed = 0;
+	float pitch = 0;
+	public float speedReduce = .03f;
+
 	// Use this for initialization
 	void Start () {
+		amountSeed = 1+Random.value * 1.5f;
+		speedSeed = 1+Random.value * 1.2f;
 		trans = GetComponent<TransformUniversal> ();
+		aud.pitch = Random.Range (.5f, 1);
 	}
 
 	// Update is called once per frame
@@ -23,15 +31,23 @@ public class interactableMetronome : Interactable {
 				aud.Play ();
 				interacted = true;
 			}
+
 			rotAmount = maxRotate;
 			ring.transform.localScale = new Vector3 (3, 3, 3);
 
 		} else {
 			if (rotAmount > 0)
-				rotAmount -= .1f;
+				rotAmount -= speedReduce;
 			interacted = false;
+			ring.transform.localScale = new Vector3 (1,1,1);
+
 		}
-		trans.rotateOscillateUpperBounds = new Vector3 (rotAmount, 0, 0);
-		trans.rotateOscillateLowerBounds = new Vector3 (-rotAmount, 0, 0);
+		trans.rotateOscillateUpperBounds = new Vector3 (rotAmount*amountSeed, 0, .5f*rotAmount*amountSeed);
+		trans.rotateOscillateLowerBounds = new Vector3 (-1*(rotAmount*amountSeed), 0, -.5f*(rotAmount*amountSeed));
+		trans.rotateOscillateSpeed = new Vector3(4*speedSeed,0,speedSeed);
+	}
+
+	void reset(){
+		interacting = false;
 	}
 }

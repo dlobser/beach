@@ -8,7 +8,7 @@ public class resetTransform : MonoBehaviour {
 	Quaternion initRotation;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		initPos = transform.position;
 		initScale = transform.localScale;
 		initRotation = transform.rotation;
