@@ -1,0 +1,296 @@
+Initialize engine version: 5.3.1f1 (cc9cbbcc37b4)
+[VRDevice] Initialization of device oculus failed.
+
+ 
+(Filename:  Line: 87)
+
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX TITAN Black (ID=0x100c)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween43.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween43.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween46.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween46.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween50.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\DOTween50.dll into Unity Child Domain
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\VirtualUser\Documents\beach\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\VirtualUser\Documents\beach\test_Data\Managed\System.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Custom/lineMatOrientGLSL' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Custom/lineMatOrientGLSL' - Setting to default shader.
+WARNING: Shader Unsupported: 'Custom/facingShaderGLSL' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Custom/facingShaderGLSL' - Setting to default shader.
+WARNING: Shader Unsupported: 'Custom/facingShader' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Custom/facingShader' - Setting to default shader.
+desktop: 1920x1200 59Hz; virtual: 6000x1200 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'camGroup') is missing!
+ 
+(Filename:  Line: 1655)
+
+WARNING: Shader Unsupported: 'Unlit/distancePulse' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Unlit/distancePulse' - Setting to default shader.
+WARNING: Shader Unsupported: 'Custom/sky' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Custom/sky' - Setting to default shader.
+WARNING: Shader Unsupported: 'Unlit/tubeShader' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Unlit/tubeShader' - Setting to default shader.
+UnloadTime: 1.072717 ms
+[VRDevice] Initialization of device oculus failed.
+
+ 
+(Filename:  Line: 87)
+
+aimer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+OVRCamera (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+484
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+484
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+484
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+484
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+496
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+1208
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+284
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.PlayFootStepAudio () [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.ProgressStepCycle (Single speed) [0x00000] in <filename unknown>:0 
+  at UnityStandardAssets.Characters.FirstPerson.FirstPersonController.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 3 worker threads for Enlighten.
+  Thread -> id: e2e8 -> priority: 1 
+  Thread -> id: 11b54 -> priority: 1 
+  Thread -> id: 11808 -> priority: 1 
