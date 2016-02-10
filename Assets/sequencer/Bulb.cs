@@ -60,12 +60,11 @@ public class Bulb : MonoBehaviour {
 
 	public void drawStroke(Vector3 vec){
 		if (activeStroke == null) {
-			activeStroke = Instantiate (bGlobals.defaultStroke);// new GameObject ();
+			activeStroke = Instantiate (bGlobals.strokes[bGlobals.which]);// new GameObject ();
+//			Debug.Log(activeStroke);
 			Stroke s = activeStroke.GetComponent<Stroke>();// .AddComponent<Stroke> ();
-//			s.trailMat = trailMat;
-//			s.Create (clip);
-			activeStroke.GetComponent<AudioSource>().clip = bGlobals.clips[bGlobals.which];
-			Debug.Log (bGlobals.clips [bGlobals.which]);
+//			activeStroke.GetComponent<AudioSource>().clip = bGlobals.clips[bGlobals.which];
+//			Debug.Log (bGlobals.clips [bGlobals.which]);
 			s.setPitch (pitch);
 			s.playStartSound ();
 			s.trailLength += 1-pitch;
@@ -77,8 +76,10 @@ public class Bulb : MonoBehaviour {
 	}
 
 	public void finishStroke(){
-		activeStroke.GetComponent<Stroke> ().isPlaying = false;//// null;
-		activeStroke = null;
+		if (activeStroke != null) {
+			activeStroke.GetComponent<Stroke> ().isPlaying = false;//// null;
+			activeStroke = null;
+		}
 	}
 	
 	// Update is called once per frame

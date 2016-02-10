@@ -10,6 +10,7 @@ public class beatGlobals : Singleton<beatGlobals> {
 	public int which = 0;
 	public GameObject defaultStroke;
 	public GameObject[] strokes;
+	public GameObject[] subStrokes;
 	public float strokeAge = 5;
 	public float trailWidth = .1f;
 
