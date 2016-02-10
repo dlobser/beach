@@ -1,24 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Samsung/avatar/Unity/playground/Assets/Scripts/raycaster.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/sequencer/Stroke.cs">
     <Files>
-      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/Rails/RailsNodeRollerCoaster.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/Branch.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/Joint.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/TREE.cs" Line="201" Column="1" />
-      <File FileName="Assets/TREE/GenomeUtils.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/TREEUtils.cs" Line="375" Column="1" />
-      <File FileName="Assets/TREE/Trait.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/tester.cs" Line="63" Column="1" />
-      <File FileName="../../../Samsung/avatar/Unity/playground/Assets/Scripts/DLUtils.cs" Line="48" Column="1" />
-      <File FileName="Assets/athon/scripts/midiLaserID.cs" Line="1" Column="1" />
-      <File FileName="Assets/athon/scripts/Dials.cs" Line="1" Column="1" />
-      <File FileName="Assets/capture/Scripts/CaptureStandard.cs" Line="1" Column="1" />
-      <File FileName="Assets/capture/Scripts/CaptureSettings.cs" Line="1" Column="1" />
-      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/Rails/SimpleMoveNode.cs" Line="77" Column="1" />
-      <File FileName="../../../../../Downloads/ActionsScripts/ChangeColor.cs" Line="1" Column="1" />
-      <File FileName="../../../../../Downloads/ActionsScripts/ColorBroadcaster.cs" Line="1" Column="1" />
-      <File FileName="../../../Samsung/avatar/Unity/playground/Assets/Scripts/raycaster.cs" Line="183" Column="5" />
+      <File FileName="Assets/sequencer/longStroke.cs" Line="87" Column="47" />
+      <File FileName="Assets/sequencer/LineUnity.cs" Line="1" Column="1" />
+      <File FileName="Assets/sequencer/strokeUtils.cs" Line="43" Column="1" />
+      <File FileName="Assets/scripts/particleTestForPoles.cs" Line="1" Column="1" />
+      <File FileName="Assets/sequencer/Stroke.cs" Line="67" Column="17" />
+      <File FileName="Assets/sequencer/beatManager.cs" Line="106" Column="50" />
+      <File FileName="Assets/sequencer/Bulb.cs" Line="83" Column="4" />
+      <File FileName="Assets/sequencer/longStroke2.cs" Line="44" Column="77" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

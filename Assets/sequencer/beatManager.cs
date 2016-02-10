@@ -13,7 +13,7 @@ public class beatManager : MonoBehaviour {
 
 */
 
-	public GameObject testBrush;
+//	public GameObject testBrush;
 
 
 	bool triggered = false;
@@ -77,20 +77,14 @@ public class beatManager : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.W)) {
 			Debug.Log (bGlobals.which);
 			bGlobals.which++;
-			if (bGlobals.which > bGlobals.clips.Length-1)
+			if (bGlobals.which > bGlobals.strokes.Length-1)
 				bGlobals.which = 0;
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
 			deleteMode = !deleteMode;
 		}
 		if(Input.GetMouseButton(0)){
-//			triggered = true;
-//		if (Input.GetMouseButtonUp (0))
-//			triggered = false;
-//		if (triggered && !makeNewStroke)
-//			makeNewStroke = true;
 			Vector3 hit = hitPoint();
-			testBrush.transform.localPosition = hit;
 			if (activeBulb==null) {
 				activeBulb = findClosest (hit);
 				activeBulb.active = true;

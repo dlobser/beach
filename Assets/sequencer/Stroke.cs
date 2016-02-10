@@ -40,7 +40,7 @@ public class Stroke : MonoBehaviour {
 		trail = new List<Vector3> ();
 		root = transform.gameObject;//new GameObject ();
 		aud = root.AddComponent<AudioSource> ();
-		aud.clip = bGlobals.clips[bGlobals.which];
+//		aud.clip = bGlobals.clips[bGlobals.which];
 
 	}
 
@@ -54,8 +54,10 @@ public class Stroke : MonoBehaviour {
 			trailToLine (0,trailHead);
 			if (timer > trailLength)
 				strokeUtils.shiftArray (Trail, trailHead);//	trail.RemoveAt (0);
-			else
+			else {
 				trailHead++;
+				playbackHead++;
+			}
 		}
 	}
 
@@ -64,19 +66,18 @@ public class Stroke : MonoBehaviour {
 		lRend.SetPositions (strokeUtils.getArrayPortion(Trail,start,end));
 	}
 
-	public void playButton(){
-//		if (!isPlaying && age < beatGlobals.Instance.strokeAge) {
-//			isPlaying = true;
-//			trailWidth = bGlobals.trailWidth;
-//			lRend.SetWidth (trailWidth, trailWidth);
-//			playStartSound ();
-//		}
-
+	public virtual void playButton(){
+		if (!isPlaying && age < beatGlobals.Instance.strokeAge) {
+			isPlaying = true;
+			trailWidth = bGlobals.trailWidth;
+			lRend.SetWidth (trailWidth, trailWidth);
+			playStartSound ();
+		}
 	}
 
 	public virtual void playBack(){
-
 		age += Time.deltaTime;
+		print (readyToDie);
 		if (isPlaying && trailHead > 0) {
 			traceLine ();
 			if (playbackHead > trailHead - 1) {
@@ -85,11 +86,9 @@ public class Stroke : MonoBehaviour {
 			}
 		} else if (!isPlaying && playbackHead < trailHead - 1) {
 			traceLine ();
-
 		} else if (!isPlaying) {
 			destruct ();
 		} else if (readyToDie) {
-			Debug.Log ("ready to die");
 			readyToDie = !readyToDie;
 			timer = 0;
 			age = 0;
@@ -113,10 +112,9 @@ public class Stroke : MonoBehaviour {
 
 	public virtual void destruct(){
 
-		Debug.Log ("destructing");
-
 		trailWidth *= .97f;
-		lRend.SetWidth (trailWidth, trailWidth);
+		if(lRend)
+			lRend.SetWidth (trailWidth, trailWidth);
 
 		float sc = root.transform.GetChild (0).transform.localScale.x;
 		root.transform.GetChild (0).transform.localScale = (new Vector3 (sc*.9f, sc*.9f, sc*.9f));

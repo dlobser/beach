@@ -250,9 +250,13 @@
      <Compile Include="Assets\sequencer\Bulb.cs" />
      <Compile Include="Assets\sequencer\LineUnity.cs" />
      <Compile Include="Assets\sequencer\Stroke.cs" />
+     <Compile Include="Assets\sequencer\animate.cs" />
+     <Compile Include="Assets\sequencer\animateBall.cs" />
+     <Compile Include="Assets\sequencer\animatePropellor.cs" />
      <Compile Include="Assets\sequencer\beatGlobals.cs" />
      <Compile Include="Assets\sequencer\beatManager.cs" />
      <Compile Include="Assets\sequencer\longStroke.cs" />
+     <Compile Include="Assets\sequencer\longStroke2.cs" />
      <Compile Include="Assets\sequencer\makeLine.cs" />
      <Compile Include="Assets\sequencer\strokeUtils.cs" />
      <None Include="Assets\shaders\warpShader.shader" />
