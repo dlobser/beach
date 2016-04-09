@@ -29,9 +29,13 @@ public class midiLaserID : MonoBehaviour {
 	bool recording = false;
 	bool buffered = false;
 	bool playing = false;
+	int audioPlayCounter = 0;
 	int playCounter = 0;
 	float startTime = 0;
 	float startBufferTime = 0 ;
+
+	float recordCounter = 0;
+	float recordFrequency = .5f;
 
 	Vector3 initInit;
 	Dials d;
@@ -67,7 +71,11 @@ public class midiLaserID : MonoBehaviour {
 	}
 
 	float gn(int a, float w,float m){
-		float r = 1 + (audiM.GetBands (a) * w * m);
+		float r = 0;
+		if (!playing)
+			r = 1 + (audiM.GetBands (a) * w * m);
+		else if (playCounter < d.volumeBuffer.Length)
+			r = 1 + d.volumeAudioBuffer [audioPlayCounter];//* w * m;
 		return r;
 	}
 
@@ -97,11 +105,11 @@ public class midiLaserID : MonoBehaviour {
 			d.checkDials (false);
 		if (MidiInput.GetKnob (45,MidiInput.Filter.Realtime) > .5f) {
 			recordMode = false;
-			print (recordMode);
+//			print (recordMode);
 		}
 		if (MidiInput.GetKnob (44,MidiInput.Filter.Realtime) > .5f) {
 			recordMode = true;
-			print (recordMode);
+//			print (recordMode);
 		}
 		if (MidiInput.GetKnob (47, MidiInput.Filter.Realtime) > .5f) {
 			for (int i = 0; i < 8; i++) {
@@ -119,33 +127,49 @@ public class midiLaserID : MonoBehaviour {
 		}
 		if (Input.GetKeyUp (KeyCode.R)) {
 			recording = !recording;
+			audiM.Play ();
+//			d.checkDials (true);
 			Debug.Log (recording);
 		}
 		if (recording) {
-			d.makeBuffer ();
+			recordCounter += Time.deltaTime;
+			if (recordCounter > recordFrequency) {
+				recordCounter = 0;
+				d.makeBuffer (audiM.GetBands (new int[]{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }));
+			}
+			d.makeAudioBuffer(audiM.GetBands (new int[]{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }));
 		}
 		if (Input.GetKeyUp (KeyCode.S)) {
-			Debug.Log (d.buffer);
 			System.IO.File.WriteAllText ("Assets/athon/data/session_" + sessionName + ".txt",d.buffer);
+			System.IO.File.WriteAllText ("Assets/athon/data/sessionAudio_" + sessionName + ".txt",d.audioBuffer);
 		}
 		if (Input.GetKeyUp (KeyCode.P)) {
 			if (!buffered) {
 				d.readBuffer(System.IO.File.ReadAllText ("Assets/athon/data/session_" + sessionName + ".txt"));
+				d.readAudioBuffer(System.IO.File.ReadAllText ("Assets/athon/data/sessionAudio_" + sessionName + ".txt"));
 				buffered = true;
 			}
 			playing = !playing;
 			startTime = Time.time;
 			startBufferTime = d.timeBuffer [0];
-			Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = true;
-			Camera.main.gameObject.GetComponent<CaptureStandard> ().captureSettings.recordMode = true;
+			audiM.Play ();
+//			Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = true;
+//			Camera.main.gameObject.GetComponent<CaptureStandard> ().captureSettings.recordMode = true;
 		}
 		if (playing) {
 			if (playCounter < d.timeBuffer.Length - 1) {
 				if (Time.time - startTime > d.timeBuffer [playCounter] - startBufferTime) {
-					d.readDials (d.presetBuffer [playCounter]);
+//					print (d.presetBuffer [playCounter]);
+					float diff = (d.timeBuffer[playCounter] - startBufferTime - Time.time - startTime) /
+						(d.timeBuffer[playCounter] - startBufferTime - 
+							d.timeBuffer[playCounter-1] - startBufferTime);
+					d.readDials (d.presetBuffer [playCounter-1], d.presetBuffer [playCounter], diff);
 				}
 				while (d.timeBuffer [playCounter] - startBufferTime < Time.time - startTime) {
 					playCounter++;
+				}
+				while (d.timeAudioBuffer [audioPlayCounter] - startBufferTime < Time.time - startTime) {
+					audioPlayCounter++;
 				}
 			} else {
 				playing = false;
@@ -156,6 +180,9 @@ public class midiLaserID : MonoBehaviour {
 				playing = !playing;
 				Camera.main.gameObject.GetComponent<CaptureStandard> ().enabled = false;
 			}
+		}
+		if (Input.GetKeyUp (KeyCode.B)) {
+			audiM.Play ();
 		}
 //		print (MidiInput.GetKnob (14));
 				
@@ -177,7 +204,7 @@ public class midiLaserID : MonoBehaviour {
 		//42,43,50,51,52,53,54,55,56
 		int q = -1;
 		int qq = 1;
-
+		print (d.dials [0, 7]);
 		noise.GetComponent<Renderer> ().sharedMaterial.SetColor ("_Color", new Color (1, 1, 1, d.dials[0,0]*.1f*(1f+gn (1,d.knobs[0,0],10)) ));
 		A.GetComponent<Renderer>().sharedMaterial.SetFloat ("_Amount",  d.dials[0,1]*gn (2,d.knobs[0,1],10)*.01f*(1+d.dials [0,2]*2f)*gn (3,d.knobs[0,2],10) );
 		C.GetComponent<Renderer>().sharedMaterial.SetFloat ("_Speed", d.dials[0,3]*.1f*gn (4,d.knobs[0,3],10) );

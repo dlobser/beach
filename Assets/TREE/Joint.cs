@@ -15,6 +15,9 @@ public class Joint : MonoBehaviour {
 	public int offset2 = 0;
 	public int[] dictionaryName;
 
+	GameObject scalar;
+	GameObject rotator;
+
 	void Awake(){
 		limbs = new List<GameObject> ();
 		trait = new Trait ();
@@ -29,6 +32,15 @@ public class Joint : MonoBehaviour {
 		trait.Apply (p);
 		_construct ();
 	}
+
+	public void setTrait(Trait t){
+		trait = t;
+	}
+
+	public void setScale(float height){
+		trait.jointScale = height;
+		scalar.transform.localScale = new Vector3 (1, trait.jointScale, 1);
+	}
 //
 //	public void setDictionaryName(params int[] name){
 //
@@ -42,9 +54,9 @@ public class Joint : MonoBehaviour {
 		jointMesh.transform.localPosition = new Vector3(0,.5f,0);	
 		jointMesh.transform.localScale = new Vector3(1,1,1);	
 
-		GameObject scalar = new GameObject ();// trait.scalar;
+		scalar = new GameObject ();// trait.scalar;
 		scalar.name = "scalar";
-		GameObject rotator = new GameObject ();//trait.rotator;
+		rotator = new GameObject ();//trait.rotator;
 		rotator.name = "rotator";
 
 		jointMesh.transform.parent = scalar.transform;

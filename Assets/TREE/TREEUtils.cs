@@ -3,7 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+
 public static class TREEUtils{
+
+	public static float testCounter = 0;
+
+	public static GameObject nullGameObject = new GameObject();
 
 	public static GameObject makePart(Mesh mesh, Material mat){
 		GameObject part = new GameObject ();
@@ -20,6 +25,7 @@ public static class TREEUtils{
 		G.AddComponent<Joint> ();
 		Joint J = G.GetComponent<Joint> ();
 		J.Construct (t);
+		J.joint = t.id;
 		return G;
 	}
 
@@ -45,9 +51,10 @@ public static class TREEUtils{
 		return a;
 	}
 
+
 	public static int[] intPop(int[] a){
 		int[] newArray = new int[a.Length -1];
-		for (int i = 0; i < a.Length; i++) {
+		for (int i = 0; i < newArray.Length; i++) {
 			newArray[i] = a[i];
 		}
 		a = newArray;
@@ -94,6 +101,7 @@ public static class TREEUtils{
 
 		GameObject returner;
 
+
 		if (obj) {
 			if (num > obj.GetComponent<Joint> ().joints + 1)
 				num = obj.GetComponent<Joint> ().joints + 1;
@@ -103,7 +111,7 @@ public static class TREEUtils{
 				returner = obj;
 		} else {
 			Debug.Log ("empty");
-			returner = new GameObject ();
+			returner = null;//new GameObject ();
 		}
 		return returner;
 	}
@@ -155,6 +163,7 @@ public static class TREEUtils{
 			returner = findJoint(selector,counter+2,joint.GetComponent<Joint>().limbs[selector[counter+1]]);
 		}
 		else{
+//			Debug.Log (branch.GetComponent<Joint>());
 			returner = findJointOnBranch(branch,selector[counter]);
 		}
 
@@ -167,20 +176,224 @@ public static class TREEUtils{
 			Debug.Log (b);
 	}
 
-	public static void makeList(string range){
-		string[] sa = range.Split (new string[] { "," }, System.StringSplitOptions.None);
-		List<string[]> ss = new List<string[]> ();
-		for(int i = 0 ; i < sa.Length ; i++){
-			string[] sf = sa [i].Split (new string[] { ";" }, System.StringSplitOptions.None);
-			ss.Add (sf);
-			Debug.Log (sf [0]);
+//	public static void makeList(string range){
+//		string[] sa = range.Split (new string[] { "," }, System.StringSplitOptions.None);
+//		List<string[]> ss = new List<string[]> ();
+//		for(int i = 0 ; i < sa.Length ; i++){
+//			string[] sf = sa [i].Split (new string[] { ";" }, System.StringSplitOptions.None);
+//			ss.Add (sf);
+//			Debug.Log (sf [0]);
+//		}
+//
+//	}
+
+
+
+	/*pass in a list of int array
+	<[0],[1],[1,4]>
+	
+	*/
+	public static List<int[]> makeList(string input, TREE tree){
+			
+		string[] sa = input.Split (new string[] { "|" }, System.StringSplitOptions.None);
+
+		List<int[]> range = new List<int[]> ();
+
+//		Debug.Log (sa [0]);
+		for (int i = 0; i < sa.Length; i++) {
+			string[] na = sa[i].Split (new string[] { "," }, System.StringSplitOptions.None);
+//			int a = int.Parse (na [0]);
+//			int b = int.Parse (na [1]);
+//			Debug.Log (na[0]);
+//			Debug.Log (int.Parse(na[0]));
+			if (na.Length == 1) {
+				int[] toAdd = new int[1];
+				toAdd [0] = int.Parse (na [0]);
+				range.Add (toAdd);
+			} else {
+				int a = int.Parse (na [1]);
+				int b = int.Parse (na [0]);
+//				int[] toAdd = new int[(a-b)+1];
+//				for (int j = 0; j < toAdd.Length; j++) {
+//					toAdd [j] = b + j;
+////					Debug.Log (toAdd [j]);
+//				}
+				int[] toAdd = new int[2];
+				toAdd [0] = b;
+				toAdd [1] = a;
+				range.Add (toAdd);
+			}
 		}
+
+//		Debug.Log (range);
+
+		int[] Stack = new int[0];
+		List<int[]> StackArray = new List<int[]> ();
+		int index = 0;
+
+//		for (int i = 0; i < range.Count; i++) {
+//			for (int j = 0; j < range[i].Length; j++) {
+//				Debug.Log (i + "," + j);
+//				Debug.Log (range [i][ j]);
+//			}
+//		}
+
+		return _makeList (range, Stack, StackArray, index, tree);
 
 	}
 
-//	public static int[] _makeList(int[] range, int[] Stack, int[] StackArray, int Index){
-//
-//	}
+
+	public static List<int[]> _makeList(List<int[]> range, int[] stack, List<int[]> stackArray, int Index, TREE tree){
+
+		if (Index < range.Count) {
+
+			int i = Index;
+
+			if (range [i].Length > 1 && i != range.Count - 1) {
+				for (int j = range [i] [0]; j <= range [i] [range [i].Length-1]; j++) {
+					stack = intPush (stack, j);
+					int[] tempStack = makeTempStack (stack);
+					_makeList (range, tempStack, stackArray, i + 1, tree);
+					stack = intPop (stack);
+				}
+			}
+
+			else if(range[i][0] == -1 && i % 2 == 0 && i != range.Count-1){
+
+				int[] tempStack = makeTempStack (stack);
+				tempStack = intPush (tempStack, 0);
+
+				GameObject[] jarr = new GameObject[0];
+				GameObject g = findJoint (tempStack, 0, tree.transform.GetChild(0).gameObject);
+				jarr = findLimbs(g,jarr);
+
+				for (int j = 0 ; j < jarr.Length ; j++){
+
+					stack = intPush (stack, j);
+					tempStack = makeTempStack (stack);
+					_makeList (range, tempStack, stackArray, i + 1, tree);
+					stack = intPop (stack);
+
+				}
+			}
+
+			else if(range[i][0] == -1 && i%2!=0 && i!=range.Count-1){
+
+				int[] tempStack = makeTempStack (stack);
+
+				GameObject[] jarr = new GameObject[0];
+				GameObject g = findJoint (tempStack, 0, tree.transform.GetChild(0).gameObject);
+				jarr = findLimbs(g,jarr);
+
+				List<GameObject> limbs = jarr[0].GetComponent<Joint>().limbs;
+
+				for (int j = 0 ; j < limbs.Count ; j++){
+
+					stack = intPush (stack, j);
+					int[] tempStack2 = makeTempStack (stack);
+					_makeList (range, tempStack2, stackArray, i + 1, tree);
+					stack = intPop (stack);
+				}
+			}
+				
+			else if(range[i][0] == -2 && i==range.Count-1 || 
+				    range[i][0] == -1 && i==range.Count-1 ||
+				    range[i][0] == -3 && i==range.Count-1){
+
+				int[] tempStack = makeTempStack (stack);
+
+				tempStack = intPush (tempStack, 0);
+
+				GameObject g = findJoint (tempStack, 0, tree.transform.GetChild (0).gameObject);
+				int joints = g.gameObject.GetComponent<Joint> ().joints;
+
+				int min = 0;
+				int max = joints+1;
+
+				if(range[i][0] == -2)
+					min=1;
+
+				if(range[i][0] == -3)
+					min=max-1;
+
+				for (var j = min ; j < max ; j++){
+
+					stack = intPush (stack, j);
+
+					tempStack = makeTempStack (stack);
+
+					for(var k = 0 ; k < stack.Length ; k++){
+						tempStack[k] = stack[k];
+					}
+
+					_makeList (range, tempStack, stackArray, i + 1, tree);
+					stack = intPop (stack);
+				}
+
+			}
+
+			else if(i==range.Count-1){
+
+				int[] tempStack = makeTempStack (stack);
+
+				tempStack = intPush (tempStack, 0);
+
+				int min = range[i][0];
+				int max = range[i][1];
+
+				GameObject g = findJoint (tempStack, 0, tree.transform.GetChild (0).gameObject);
+				int joints = g.gameObject.GetComponent<Joint> ().joints;
+
+				if(min>joints+1)
+					min=joints+1;
+				if(max>joints+1)
+					max=joints+1;
+
+				for (int j = min ; j <= max ; j++){
+
+					if(range[i][0]==-2)
+						j++;
+
+					stack = intPush (stack, j);
+
+					tempStack = makeTempStack (stack);
+
+					_makeList (range, tempStack, stackArray, i + 1, tree);
+					stack = intPop (stack);
+				}
+			}
+			else {
+
+				stack = intPush (stack, range [i] [0]);
+
+				int[] tempStack = makeTempStack (stack);
+
+				_makeList (range, stack, stackArray, i + 1, tree);
+				stack = intPop (stack);
+			}
+		} else {
+			stackArray.Add (stack);
+		}
+		string s = "";
+
+				for (int i = 0; i < stackArray.Count; i++) {
+			s += "FF";
+					for (int j = 0; j < stackArray[i].Length; j++) {
+						s+=","+stackArray [i][ j];
+					}
+				}
+//		Debug.Log (s);
+//		Debug.Log ("\n");
+		return stackArray;
+	}
+
+	public static int[] makeTempStack (int[] stack){
+//		int[] tempStack = new int[0];
+//		for (var k = 0; k < stack.Length; k++) {
+//			tempStack = intPush (tempStack, stack [k]);
+//		}
+		return stack.Clone () as int[];// tempStack;
+	}
 
 	/*
 	 * TREE.prototype.makeList = function(range,Stack,StackArray,Index) {

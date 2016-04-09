@@ -4,7 +4,7 @@ using System.Collections;
 public class offsetUVS : MonoBehaviour {
 
 	public Vector2 speed;
-	public Renderer rend;
+//	public Renderer rend;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,6 @@ public class offsetUVS : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rend.sharedMaterial.SetTextureOffset ("_MainTex", speed*Time.time);
+		GetComponent<MeshRenderer>().sharedMaterial.SetTextureOffset ("_MainTex", speed*Time.time);
 	}
 }

@@ -4,12 +4,16 @@ using System.Collections.Generic;
 
 public class TREE : MonoBehaviour {
 
+	public GameObject defaultJoint;
+	private bool defaultJointExists = true;
+
 	public Trait trait;
 	public int ID = 0;
 	private string _name = "TREE";
 	Traits traits;
 	GameObject root;
 	public GameObject[] jointChildren;
+
 
 	public Dictionary<int[],GameObject> jointDictionary;
 	int jCounter = 0;
@@ -35,6 +39,9 @@ public class TREE : MonoBehaviour {
 		traits = Traits.Instance;
 		traits.build ();
 
+		if (defaultJoint == null)
+			defaultJointExists = false;
+
 		trait = new Trait ();
 		trait.makeDefault ();
 
@@ -45,7 +52,15 @@ public class TREE : MonoBehaviour {
 //		rootTrait.ballMesh = null;
 //		root = TREEUtils.JointFactory (rootTrait);
 //		root.name = "root";
-		root = makeRoot();
+//		root = makeRoot();
+		Joint j = this.gameObject.AddComponent<Joint> ();
+		Trait rootTrait = new Trait ();
+		rootTrait.makeDefault ();
+		rootTrait.jointMesh = null;
+		rootTrait.ballMesh = null;
+		j.trait = rootTrait;
+		this.name = "root";
+		root = this.gameObject;
 //		root.transform.parent = transform;
 	}
 
@@ -54,11 +69,25 @@ public class TREE : MonoBehaviour {
 		rootTrait.makeDefault ();
 		rootTrait.jointMesh = null;
 		rootTrait.ballMesh = null;
-		GameObject root = TREEUtils.JointFactory (rootTrait);
+		GameObject root = makeJoint (rootTrait);// TREEUtils.JointFactory (rootTrait);
 		root.name = "root";
 		return root;
 	}
 
+	public GameObject makeJoint(Trait t){
+		if (!defaultJointExists)
+			return TREEUtils.JointFactory (t);
+		else {
+			GameObject G = Instantiate (defaultJoint);
+			G.name = "joint_" + t.id;
+			G.AddComponent<Joint> ();
+			Joint J = G.GetComponent<Joint> ();
+			J.setTrait (t);
+			J.setScale (t.jointScale);
+			J.joint = t.id;
+			return G;
+		}
+	}
 
 
 	public GameObject Branch(params object[] args){
@@ -105,7 +134,7 @@ public class TREE : MonoBehaviour {
 		if (obj.gameObject.name == "ROOT")
 			Debug.Log ("ROOT");
 		
-		GameObject j = TREEUtils.JointFactory(t);
+		GameObject j = makeJoint (t);// TREEUtils.JointFactory(t);
 		j.transform.parent = obj;
 		obj.GetComponent<Joint> ().childJoint = j;
 		j.GetComponent<Joint> ().dictionaryName = dict;
@@ -135,7 +164,7 @@ public class TREE : MonoBehaviour {
 
 		Trait t = new Trait();
 		t.Apply (trait);
-		GameObject tempRoot = TREEUtils.JointFactory(t);
+		GameObject tempRoot = makeJoint (t);// TREEUtils.JointFactory(t);
 		tempRoot.transform.parent = transform;
 
 		for (int i = 0; i < g.rads[0]; i++) {
@@ -158,6 +187,9 @@ public class TREE : MonoBehaviour {
 	public void recursiveBranch(Genome g,  int counter, GameObject joint){
 
 		GameObject newBranch, kidJoint;
+
+		TREEUtils.testCounter += Time.deltaTime;
+
 
 		int end = (int)g.end [counter];
 		if((int)g.end[counter]==-1)
@@ -186,7 +218,7 @@ public class TREE : MonoBehaviour {
 //				kidJoint.GetComponent<Joint> ().childJoint = newBranch;
 				TREEUtils.zeroTransforms (newBranch);
 				newBranch.transform.localEulerAngles = ( new Vector3 (0, j * 360 / g.rads [counter], g.angles [counter]));
-		
+				newBranch.transform.Translate (new Vector3 (kidJoint.GetComponent<Joint> ().trait.jointScale, 0,0));
 				kidJoint.GetComponent<Joint> ().limbs.Add (newBranch);
 
 			}
@@ -196,5 +228,7 @@ public class TREE : MonoBehaviour {
 				}
 			}
 		}
+
+		Debug.Log (TREEUtils.testCounter);
 	}
 }
