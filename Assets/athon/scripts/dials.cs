@@ -61,11 +61,11 @@ public class Dials : Singleton<Dials> {
 			for (int j = 0; j < 9; j++) {
 				++q;
 				if (refresh||!(MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime)*mult).Equals(prevDials [i, j])) {
-					dials [i, j] =    ( prevDials[i,j] * 100 + MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime) * mult )/101 ;
+					dials [i, j] =    ( prevDials[i,j] * 10 + MidiInput.GetKnob (dialID [q], MidiInput.Filter.Realtime) * mult )/11 ;
 					prevDials [i, j] = dials[i,j];
 				}
 				if (refresh||!(MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime)*mult).Equals(prevKnobs [i, j])) {
-					knobs [i, j] = 	  ( prevKnobs[i,j] * 100 + MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime) * mult )/101 ;
+					knobs [i, j] = 	  ( prevKnobs[i,j] * 10 + MidiInput.GetKnob (knobID [q], MidiInput.Filter.Realtime) * mult )/11 ;
 					prevKnobs [i, j] = knobs[i,j];
 				}
 				if (i < 2) {

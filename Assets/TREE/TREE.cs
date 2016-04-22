@@ -64,6 +64,11 @@ public class TREE : MonoBehaviour {
 //		root.transform.parent = transform;
 	}
 
+	public void setDefaultJoint(GameObject Joint){
+		defaultJoint = Joint;
+		defaultJointExists = true;
+	}
+
 	GameObject makeRoot(){
 		Trait rootTrait = new Trait ();
 		rootTrait.makeDefault ();
@@ -109,7 +114,7 @@ public class TREE : MonoBehaviour {
 				t = (Trait)args[i];
 			if (args [i].GetType () == typeof(Transform)) {
 				container = (Transform)args [i];
-				Debug.Log ("groot");
+//				Debug.Log ("groot");
 			}
 			if(args[i].GetType() == typeof(int[]))
 				dictName = (int[])args[i];
@@ -131,8 +136,8 @@ public class TREE : MonoBehaviour {
 		t.Apply (trait);
 		t.id = counter;
 
-		if (obj.gameObject.name == "ROOT")
-			Debug.Log ("ROOT");
+//		if (obj.gameObject.name == "ROOT")
+//			Debug.Log ("ROOT");
 		
 		GameObject j = makeJoint (t);// TREEUtils.JointFactory(t);
 		j.transform.parent = obj;
@@ -168,12 +173,11 @@ public class TREE : MonoBehaviour {
 		tempRoot.transform.parent = transform;
 
 		for (int i = 0; i < g.rads[0]; i++) {
-//
 //			Trait t = new Trait ();
 //			t.Apply (trait);
 			t.jointScale = g.length [0];
 
-			GameObject thisRoot = Branch ((int)g.joints [0],tempRoot.transform, t);
+			GameObject thisRoot = Branch ((int)g.joints [0]-1,tempRoot.transform, t);
 			thisRoot.transform.Rotate( new Vector3 (0, i * 360 / g.rads [0], g.angles [0]));
 
 			tempRoot.GetComponent<Joint> ().limbs.Add (thisRoot);
@@ -188,12 +192,9 @@ public class TREE : MonoBehaviour {
 
 		GameObject newBranch, kidJoint;
 
-		TREEUtils.testCounter += Time.deltaTime;
-
-
 		int end = (int)g.end [counter];
-		if((int)g.end[counter]==-1)
-			end = joint.GetComponent<Joint> ().joints + 1;
+		if ((int)g.end [counter] == -1)
+			end = joint.GetComponent<Joint> ().joints+ 1;
 
 		if (joint.GetComponent<Joint> ().joints < end)
 			end = joint.GetComponent<Joint> ().joints + 1;
@@ -213,12 +214,12 @@ public class TREE : MonoBehaviour {
 
 				t.jointScale = g.length [counter];
 
-				newBranch = Branch ((int)g.joints [counter], t);
+				newBranch = Branch ((int)g.joints [counter]-1, t);
 				newBranch.transform.parent = kidJoint.transform;
 //				kidJoint.GetComponent<Joint> ().childJoint = newBranch;
 				TREEUtils.zeroTransforms (newBranch);
 				newBranch.transform.localEulerAngles = ( new Vector3 (0, j * 360 / g.rads [counter], g.angles [counter]));
-				newBranch.transform.Translate (new Vector3 (kidJoint.GetComponent<Joint> ().trait.jointScale, 0,0));
+				newBranch.transform.localPosition = (new Vector3 (0,kidJoint.GetComponent<Joint> ().trait.jointScale,0));
 				kidJoint.GetComponent<Joint> ().limbs.Add (newBranch);
 
 			}
@@ -229,6 +230,6 @@ public class TREE : MonoBehaviour {
 			}
 		}
 
-		Debug.Log (TREEUtils.testCounter);
+//		Debug.Log (TREEUtils.testCounter);
 	}
 }

@@ -43,10 +43,10 @@ public class AudioManagerMic : MonoBehaviour
 	{
 		if (setupMic) {
 			_aud = this.GetComponent<AudioSource> ();
-//			_aud.clip = Microphone.Start ("Built-in Microphone", true, 999, numOfSamples);
-//			while (!(Microphone.GetPosition("Built-in Microphone") > 0)) {
-//				_aud.Play ();
-//			}
+			_aud.clip = Microphone.Start ("Built-in Microphone", true, 999, numOfSamples);
+			while (!(Microphone.GetPosition("Built-in Microphone") > 0)) {
+				_aud.Play ();
+			}
 			//		_aud.Stop();
 			
 			SetUpSpectrum ();

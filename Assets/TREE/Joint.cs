@@ -15,8 +15,8 @@ public class Joint : MonoBehaviour {
 	public int offset2 = 0;
 	public int[] dictionaryName;
 
-	GameObject scalar;
-	GameObject rotator;
+	public GameObject scalar;
+	public GameObject rotator;
 
 	void Awake(){
 		limbs = new List<GameObject> ();

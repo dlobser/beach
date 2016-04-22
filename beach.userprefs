@@ -1,21 +1,25 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TREE/tester2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/athon/shaders/simpleSin.shader">
     <Files>
-      <File FileName="Assets/athon/scripts/pointOnSurfaceToTexture.cs" Line="14" Column="17" />
-      <File FileName="Assets/TREE/TREEUtils.cs" Line="14" Column="29" />
-      <File FileName="Assets/TREE/tester.cs" Line="3" Column="34" />
-      <File FileName="../../../../../Downloads/VR_PLAYEr.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/LEDStrip.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/lightStrip.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/lightStripShaderManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/tester2.cs" Line="1" Column="1" />
+      <File FileName="Assets/shaders/facingShader.shader" Line="1" Column="1" />
+      <File FileName="Assets/Cardboard/Editor/CardboardEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Cardboard/Scripts/VRDevices/BaseVRDevice.cs" Line="1" Column="1" />
+      <File FileName="Assets/Cardboard/Scripts/VRDevices/BaseAndroidDevice.cs" Line="1" Column="1" />
+      <File FileName="Assets/Cardboard/Scripts/VRDevices/BaseCardboardDevice.cs" Line="1" Column="1" />
+      <File FileName="Assets/Cardboard/Scripts/Cardboard.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/TREE.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/TREEUtils.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/Trait.cs" Line="1" Column="1" />
+      <File FileName="Assets/athon/scripts/pointOnSurfaceToTexture.cs" Line="1" Column="1" />
+      <File FileName="Assets/athon/shaders/unlitTrans.shader" Line="11" Column="34" />
       <File FileName="Assets/athon/scripts/snapshot.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/TREE.cs" Line="163" Column="42" />
-      <File FileName="Assets/TREE/Trait.cs" Line="48" Column="13" />
-      <File FileName="Assets/athon/scripts/Singleton.cs" Line="49" Column="1" />
-      <File FileName="Assets/TREE/Joint.cs" Line="37" Column="13" />
-      <File FileName="Assets/shaders/glslToon.shader" Line="1" Column="1" />
-      <File FileName="Assets/TREE/tester2.cs" Line="30" Column="2" />
+      <File FileName="Assets/athon/shaders/rescale.shader" Line="1" Column="1" />
+      <File FileName="Assets/athon/shaders/uvWithTransparency.shader" Line="54" Column="34" />
+      <File FileName="Assets/athon/test/Scott/CameraDifference.cs" Line="19" Column="13" />
+      <File FileName="Assets/athon/test/diff.shader" Line="1" Column="1" />
+      <File FileName="Assets/athon/shaders/simpleSin.shader" Line="143" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

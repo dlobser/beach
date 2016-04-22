@@ -176,36 +176,14 @@ public static class TREEUtils{
 			Debug.Log (b);
 	}
 
-//	public static void makeList(string range){
-//		string[] sa = range.Split (new string[] { "," }, System.StringSplitOptions.None);
-//		List<string[]> ss = new List<string[]> ();
-//		for(int i = 0 ; i < sa.Length ; i++){
-//			string[] sf = sa [i].Split (new string[] { ";" }, System.StringSplitOptions.None);
-//			ss.Add (sf);
-//			Debug.Log (sf [0]);
-//		}
-//
-//	}
-
-
-
-	/*pass in a list of int array
-	<[0],[1],[1,4]>
-	
-	*/
 	public static List<int[]> makeList(string input, TREE tree){
 			
 		string[] sa = input.Split (new string[] { "|" }, System.StringSplitOptions.None);
 
 		List<int[]> range = new List<int[]> ();
 
-//		Debug.Log (sa [0]);
 		for (int i = 0; i < sa.Length; i++) {
 			string[] na = sa[i].Split (new string[] { "," }, System.StringSplitOptions.None);
-//			int a = int.Parse (na [0]);
-//			int b = int.Parse (na [1]);
-//			Debug.Log (na[0]);
-//			Debug.Log (int.Parse(na[0]));
 			if (na.Length == 1) {
 				int[] toAdd = new int[1];
 				toAdd [0] = int.Parse (na [0]);
@@ -213,30 +191,16 @@ public static class TREEUtils{
 			} else {
 				int a = int.Parse (na [1]);
 				int b = int.Parse (na [0]);
-//				int[] toAdd = new int[(a-b)+1];
-//				for (int j = 0; j < toAdd.Length; j++) {
-//					toAdd [j] = b + j;
-////					Debug.Log (toAdd [j]);
-//				}
 				int[] toAdd = new int[2];
 				toAdd [0] = b;
 				toAdd [1] = a;
 				range.Add (toAdd);
 			}
 		}
-
-//		Debug.Log (range);
-
+			
 		int[] Stack = new int[0];
 		List<int[]> StackArray = new List<int[]> ();
 		int index = 0;
-
-//		for (int i = 0; i < range.Count; i++) {
-//			for (int j = 0; j < range[i].Length; j++) {
-//				Debug.Log (i + "," + j);
-//				Debug.Log (range [i][ j]);
-//			}
-//		}
 
 		return _makeList (range, Stack, StackArray, index, tree);
 
@@ -244,6 +208,8 @@ public static class TREEUtils{
 
 
 	public static List<int[]> _makeList(List<int[]> range, int[] stack, List<int[]> stackArray, int Index, TREE tree){
+
+		testCounter += Time.deltaTime;
 
 		if (Index < range.Count) {
 
@@ -374,214 +340,21 @@ public static class TREEUtils{
 		} else {
 			stackArray.Add (stack);
 		}
-		string s = "";
-
-				for (int i = 0; i < stackArray.Count; i++) {
-			s += "FF";
-					for (int j = 0; j < stackArray[i].Length; j++) {
-						s+=","+stackArray [i][ j];
-					}
-				}
+//		string s = "";
+//
+//		for (int i = 0; i < stackArray.Count; i++) {
+//			s += "FF";
+//			for (int j = 0; j < stackArray[i].Length; j++) {
+//				s+=","+stackArray [i][ j];
+//			}
+//		}
 //		Debug.Log (s);
 //		Debug.Log ("\n");
 		return stackArray;
 	}
 
 	public static int[] makeTempStack (int[] stack){
-//		int[] tempStack = new int[0];
-//		for (var k = 0; k < stack.Length; k++) {
-//			tempStack = intPush (tempStack, stack [k]);
-//		}
 		return stack.Clone () as int[];// tempStack;
 	}
 
-	/*
-	 * TREE.prototype.makeList = function(range,Stack,StackArray,Index) {
-
-		var stack = Stack || [];
-		var stackArray = StackArray || [];
-		var index = Index || 0;
-
-		if(index < range.length){
-
-			var i = index;
-
-			if (range[i] instanceof Array && i!=range.length-1) {
-				for (var j = range[i][0] ; j <= range[i][1]; j++) {
-
-					stack.push(j);
-
-					var tempStack = [];
-
-					for(var k = 0 ; k < stack.length ; k++){
-						tempStack[k] = stack[k];
-					}
-
-					this.makeList(range,tempStack,stackArray,i+1);
-					stack.pop();
-
-				}
-			}
-
-			else if(range[i] == "all" && index%2 === 0 && index!=range.length-1 ||
-				range[i] == -1 && index%2 === 0 && index!=range.length-1){
-
-				var tempStack = [];
-
-				for(var k = 0 ; k < stack.length ; k++){
-					tempStack[k] = stack[k];
-				}
-
-				tempStack.push(0);
-
-				var jarr = [];
-				this._findLimbs(this.findJoint(tempStack),jarr);
-
-				for (var j = 0 ; j < jarr.length ; j++){
-
-					stack.push(j);
-
-					var tempStack = [];
-
-					for(var k = 0 ; k < stack.length ; k++){
-						tempStack[k] = stack[k];
-					}
-
-					this.makeList(range,tempStack,stackArray,i+1);
-
-					stack.pop();
-
-				}
-
-			}
-
-			else if(range[i] == "all" && index%2!==0 && index!==range.length-1 ||
-				range[i] == -1 && index%2!==0 && index!=range.length-1){
-
-				var tempStack = [];
-
-				for(var k = 0 ; k < stack.length ; k++){
-					tempStack[k] = stack[k];
-				}
-
-				var jarr = [];
-				this._findLimbs(this.findJoint(tempStack),jarr);
-			
-				var limbs = jarr[0].limbs;
-			
-				for (var j = 0 ; j < limbs.length ; j++){
-
-					stack.push(j);
-
-					var tempStack2 = [];
-
-					for(var k = 0 ; k < stack.length ; k++){
-						tempStack2[k] = stack[k];
-					}
-
-					this.makeList(range,tempStack2,stackArray,i+1);
-
-					stack.pop();
-				}
-
-			}
-
-			else if(range[i] == -2 && index==range.length-1 || 
-					range[i] == "all" && index==range.length-1 || 
-					range[i] == -1 && index==range.length-1 ||
-					range[i] == -3 && index==range.length-1){
-
-				var tempStack = [];
-
-				for(var k = 0 ; k < stack.length ; k++){
-					tempStack[k] = stack[k];
-				}
-
-				tempStack.push(0);
-
-				var joints = this.findJoint(tempStack).joints;
-
-				var min=0;
-				var max = joints+1;
-
-				if(range[i]==-2)
-					min=1;
-
-				if(range[i]==-3)
-					min=max-1;
-
-				for (var j = min ; j < max ; j++){
-
-					stack.push(j);
-
-					var tempStack = [];
-
-					for(var k = 0 ; k < stack.length ; k++){
-						tempStack[k] = stack[k];
-					}
-
-					this.makeList(range,tempStack,stackArray,i+1);
-					stack.pop();
-				}
-
-			}
-			else if(range[i] instanceof Array && index==range.length-1){
-				var tempStack = [];
-
-				for(var k = 0 ; k < stack.length ; k++){
-					tempStack[k] = stack[k];
-				}
-
-				tempStack.push(0);
-
-				var min = range[i][0];
-				var max = range[i][1];
-
-				var joints = this.findJoint(tempStack).joints;
-
-				if(min>joints+1)
-					min=joints+1;
-				if(max>joints+1)
-					max=joints+1;
-
-				for (var j = min ; j <= max ; j++){
-
-					if(range[i]==-2)
-						j++;
-
-					stack.push(j);
-
-					var tempStack = [];
-
-					for(var k = 0 ; k < stack.length ; k++){
-						tempStack[k] = stack[k];
-					}
-
-					this.makeList(range,tempStack,stackArray,i+1);
-					stack.pop();
-				}
-			}
-			else{
-
-				stack.push(range[i]);
-
-				var tempStack = [];
-
-				for(var k = 0 ; k < stack.length ; k++){
-					tempStack[k] = stack[k];
-				}
-
-				this.makeList(range,tempStack,stackArray,i+1);
-				stack.pop();
-			}
-
-		}
-		else{
-			stackArray.push(stack);
-		}
-
-
-		return stackArray;
-	};
-*/
 }

@@ -73,7 +73,7 @@ public class midiLaserID : MonoBehaviour {
 	float gn(int a, float w,float m){
 		float r = 0;
 		if (!playing)
-			r = 1 + (audiM.GetBands (a) * w * m);
+			r = 1 + (audiM.GetBands (new int[]{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }) * w * m);
 		else if (playCounter < d.volumeBuffer.Length)
 			r = 1 + d.volumeAudioBuffer [audioPlayCounter];//* w * m;
 		return r;
@@ -204,7 +204,7 @@ public class midiLaserID : MonoBehaviour {
 		//42,43,50,51,52,53,54,55,56
 		int q = -1;
 		int qq = 1;
-		print (d.dials [0, 7]);
+//		print (d.dials [0, 7]);
 		noise.GetComponent<Renderer> ().sharedMaterial.SetColor ("_Color", new Color (1, 1, 1, d.dials[0,0]*.1f*(1f+gn (1,d.knobs[0,0],10)) ));
 		A.GetComponent<Renderer>().sharedMaterial.SetFloat ("_Amount",  d.dials[0,1]*gn (2,d.knobs[0,1],10)*.01f*(1+d.dials [0,2]*2f)*gn (3,d.knobs[0,2],10) );
 		C.GetComponent<Renderer>().sharedMaterial.SetFloat ("_Speed", d.dials[0,3]*.1f*gn (4,d.knobs[0,3],10) );
