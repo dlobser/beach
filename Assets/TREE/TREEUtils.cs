@@ -19,6 +19,10 @@ public static class TREEUtils{
 		return part;
 	}
 
+	public static float Noise(float t){
+		return .499f- Mathf.PerlinNoise (t, t);
+	}
+
 	public static GameObject JointFactory(Trait t){
 		GameObject G = new GameObject ();
 		G.name = "joint_"+t.id;
@@ -150,16 +154,21 @@ public static class TREEUtils{
 
 			GameObject[] j = new GameObject[0];
 
+//			Debug.Log (branch);
 			j = findLimbs (branch, j);
 
 			int c = 0;
+
 			if(selector[counter] > j.Length-1){
 				c=j.Length-1;
 			}
 			else
 				c=selector[counter];
 
+//			Debug.Log (j.Length);
+//			Debug.Log (c);
 			GameObject joint = j [c];
+//			Debug.Log (joint);
 			returner = findJoint(selector,counter+2,joint.GetComponent<Joint>().limbs[selector[counter+1]]);
 		}
 		else{
@@ -356,5 +365,52 @@ public static class TREEUtils{
 	public static int[] makeTempStack (int[] stack){
 		return stack.Clone () as int[];// tempStack;
 	}
+
+	public static void appendBranch(GameObject obj){
+
+	}
+
+//	public static void appendBranch(GameObject obj, Vector3 rotate, float scale){
+//
+//	}
+
+	/*
+	TREE.prototype.appendBranch = function(obj,args){
+
+		if(!args) args = {};
+
+		var amt = args.amount || 10;
+
+		var x = args.rx || 0;
+		var y = args.ry || 0;
+		var z = args.rz || 1;
+
+		if(args.rz===0)
+			z=0;
+
+		var sc = args.sc || 1;
+
+		//making a tempTree to get access to the 'branch' function
+		var tempTree = new TREE();
+
+		var tempRoot = new Joint(tempTree.params);
+		var altLength = tempRoot.params.jointScale.clone();
+		altLength.y = sc;
+		tempRoot.construct();
+
+		var root = tempTree.branch(amt,obj,{jointScale:altLength});
+
+		var posY = args.ty || root.parent.parent.params.jointScale.y;	
+
+		root.position.y=posY;
+
+		root.rotator.rotation.x = x;
+		root.rotator.rotation.y = y;
+		root.rotator.rotation.z = z;
+
+		return root;
+	}
+	*/
+		
 
 }

@@ -17,6 +17,7 @@ public class tester2 : MonoBehaviour {
 	List<int[]> testList3;
 
 	TreeTransform xForm;
+	TreeTransform xForm2;
 
 
 	List<int> tt;
@@ -36,12 +37,12 @@ public class tester2 : MonoBehaviour {
 
 	
 		p.generate (
-			"joints",	"10,32,1",
-			"rads",		"2,2,1",
-			"angles",	"90,45,30",
-			"length",	"1,1",
-			"divs",		"1,1,2",
-			"start",	"0,4,4"
+			"joints",	"5,26",
+			"rads",		"1,8",
+			"angles",	"0,90",
+			"length",	".7,.5",
+			"divs",		"1,1",
+			"start",	"0,0"
 		);
 		
 //		testList = TREEUtils.makeList  (t, p.GetComponent<TREE>());
@@ -59,15 +60,40 @@ public class tester2 : MonoBehaviour {
 		xForm = new TreeTransform ();
 		xForm.Setup(
 			new string[]{
-				"0|-1|-1|-1|-1|-1|-1",
+//				"0|-1|-1|-1|-1|-1|-3",
 				"0|-1|-1|-1|-1",
-				"0|-1|-1"},
+				"0|-1|-1",
+//				"0|1|-2",
+			},
 			new string[]{
-				"rx:0,srx:100,sfrx:1,ssrx:100,smrx:0",
-				"rx:0,srx:10,sfrx:.1,ssrx:-.3,smrx:60",
-				"rx:0,srx:10,sfrx:.5,ssrx:-.1,smrx:60",
+				"scale:.95,rx:5,ry:20",
+				"scale:.87,ry:20"
+//				"rx:45.5",
+//				"rx:0",
+//				"rx:0,nsrx:.3,nfrx:.133,nmrx:50,nMult:5",
+//				"rx:0,ssrx:1.3,sfrx:.533,smrx:50,sMult:5,sorx:.4",
 			},p);
+//		"rx:0,srx:100,sfrx:1,ssrx:100,smrx:0",
+//		"rx:0,srx:10,sfrx:.1,ssrx:-.3,smrx:60",
+//		"rx:0,srx:10,sfrx:.5,ssrx:-.1,smrx:60",
+//
+		xForm.Update ();
 
+		xForm2 = new TreeTransform ();
+//		xForm2 = new TreeTransform ();
+		xForm2.Setup(
+			new string[]{
+//				"0|-1|-1|-1|-1",
+				"0|-1|-1|-1|-1",
+				"0|-1|-1",
+			},
+			new string[]{
+//				"cr:0,cg:0,cb:0",
+				"ory:6,orx:5",
+				"ssrx:-1.3,sfrx:1.0,smrx:2,sMult:1.4"
+		},p);
+
+		GameObject g = TREEUtils.findJoint (new int[]{0,0,0}, 0, p.gameObject);
 
 
 	}
@@ -76,8 +102,8 @@ public class tester2 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-		xForm.Update ();
+		xForm2.Update ();
+//		xForm.Update ();
 //		for (int i = 0; i < testList.Count; i++) {
 //			GameObject g = TREEUtils.findJoint (testList [i], 0, transform.GetChild (0).gameObject);
 //			int j = g.GetComponent<Joint> ().joint;
@@ -119,10 +145,22 @@ public class TreeTransform : MonoBehaviour{
 			Transforms[i].Add ("rx", 0);
 			Transforms[i].Add ("ry", 0);
 			Transforms[i].Add ("rz", 0);
-			//sin rotation
-			Transforms[i].Add ("srx", 0);
-			Transforms[i].Add ("sry", 0);
-			Transforms[i].Add ("srz", 0);
+
+			//offset rotation
+			Transforms[i].Add ("orx", 0);
+			Transforms[i].Add ("ory", 0);
+			Transforms[i].Add ("orz", 0);
+
+			Transforms[i].Add ("scale", 1);
+			Transforms[i].Add ("sx", 1);
+			Transforms[i].Add ("sy", 1);
+			Transforms[i].Add ("sz", 1);
+
+			Transforms[i].Add ("sMult", 0);
+			//sin offset
+			Transforms[i].Add ("sorx", 0);
+			Transforms[i].Add ("sory", 0);
+			Transforms[i].Add ("sorz", 0);
 			//sin frequency
 			Transforms[i].Add ("sfrx", 0);
 			Transforms[i].Add ("sfry", 0);
@@ -135,6 +173,30 @@ public class TreeTransform : MonoBehaviour{
 			Transforms[i].Add ("smrx", 0);
 			Transforms[i].Add ("smry", 0);
 			Transforms[i].Add ("smrz", 0);
+
+			//noise joint multiply
+			Transforms[i].Add ("nMult", 0);
+			//noise offset
+			Transforms[i].Add ("norx", 0);
+			Transforms[i].Add ("nory", 0);
+			Transforms[i].Add ("norz", 0);
+			//noise frequency	 
+			Transforms[i].Add ("nfrx", 0);
+			Transforms[i].Add ("nfry", 0);
+			Transforms[i].Add ("nfrz", 0);
+			//noise speed		 
+			Transforms[i].Add ("nsrx", 0);
+			Transforms[i].Add ("nsry", 0);
+			Transforms[i].Add ("nsrz", 0);
+			//noise multiply	  
+			Transforms[i].Add ("nmrx", 0);
+			Transforms[i].Add ("nmry", 0);
+			Transforms[i].Add ("nmrz", 0);
+
+			//colors
+			Transforms[i].Add ("cr", 1);
+			Transforms[i].Add ("cg", 1);
+			Transforms[i].Add ("cb", 1);
 		}
 	}
 	
@@ -169,17 +231,54 @@ public class TreeTransform : MonoBehaviour{
 	public void Update(){
 		for (int i = 0; i < SelectedJoints.Count; i++) {
 			for (int j = 0; j < SelectedJoints [i].Count; j++) {
+				
+				
 				GameObject g = TREEUtils.findJoint (SelectedJoints [i] [j], 0, root.transform.GetChild (0).gameObject);
-				int gg = g.GetComponent<Joint> ().joint;
+				int jointNumber = g.GetComponent<Joint> ().joint;
+
 				Vector3 init = initialRotation [i] [j];
+
 				Vector3 rotate = new Vector3 (
-						gg+Transforms[i]["rx"],
-						gg+Transforms[i]["ry"],
-						gg+Transforms[i]["rz"]);		
-				g.transform.localEulerAngles = init+(new Vector3 (
-					Transforms[i]["smrx"]*Mathf.Sin(((Transforms[i]["ssrx"] * Time.time) + (Transforms[i]["sfrx"] * gg)) * Transforms[i]["srx"]),
-					Mathf.Sin(Time.time + gg + Transforms[i]["ry"]),
-					Mathf.Sin(Time.time + gg + Transforms[i]["rz"])));				
+					Transforms[i]["rx"],
+					Transforms[i]["ry"],
+					Transforms[i]["rz"]
+				);
+
+				Vector3 sinRotate = Vector3.zero;
+				Vector3 noiseRotate = Vector3.zero;
+
+				if(Transforms [i] ["smrx"]!=0||Transforms [i] ["smry"]!=0||Transforms [i] ["smrz"]!=0)
+				sinRotate = new Vector3 (
+                    ((Transforms [i] ["sMult"]*jointNumber)+Transforms [i] ["smrx"]) * Mathf.Sin (((Transforms [i] ["ssrx"] * Time.time + Transforms [i] ["sorx"]) + (Transforms [i] ["sfrx"] * jointNumber))),
+                    ((Transforms [i] ["sMult"]*jointNumber)+Transforms [i] ["smry"]) * Mathf.Sin (((Transforms [i] ["ssry"] * Time.time + Transforms [i] ["sory"]) + (Transforms [i] ["sfry"] * jointNumber))),
+                    ((Transforms [i] ["sMult"]*jointNumber)+Transforms [i] ["smrz"]) * Mathf.Sin (((Transforms [i] ["ssrz"] * Time.time + Transforms [i] ["sorz"]) + (Transforms [i] ["sfrz"] * jointNumber)))
+				);
+
+				if(Transforms [i] ["nmrx"]!=0||Transforms [i] ["nmry"]!=0||Transforms [i] ["nmrz"]!=0)
+				noiseRotate = new Vector3 (
+					((Transforms [i] ["nMult"]*jointNumber)+Transforms [i] ["nmrx"]) * TREEUtils.Noise (((Transforms [i] ["nsrx"] * -Time.time + Transforms [i] ["norx"]) + (Transforms [i] ["nfrx"] * jointNumber))),
+					((Transforms [i] ["nMult"]*jointNumber)+Transforms [i] ["nmry"]) * TREEUtils.Noise (((Transforms [i] ["nsry"] * -Time.time + Transforms [i] ["nory"]) + (Transforms [i] ["nfry"] * jointNumber))),
+					((Transforms [i] ["nMult"]*jointNumber)+Transforms [i] ["nmrz"]) * TREEUtils.Noise (((Transforms [i] ["nsrz"] * -Time.time + Transforms [i] ["norz"]) + (Transforms [i] ["nfrz"] * jointNumber)))
+				);
+//
+//				print (rotate);
+//				print (rotate+init+sinRotate);
+
+				g.transform.localEulerAngles = rotate+init+sinRotate+noiseRotate;
+				g.transform.Rotate (new Vector3(Transforms [i] ["orx"] * Time.time, Transforms [i] ["ory"] * Time.time, Transforms [i] ["orz"] * Time.time));
+
+				Vector3 overallScale = 	new Vector3 (Transforms [i] ["scale"], Transforms [i] ["scale"], Transforms [i] ["scale"]);
+//				Debug.Log (overallScale.x);
+
+				if (Transforms [i] ["cr"] != 1 || Transforms [i] ["cg"] != 1 || Transforms [i] ["cb"] != 1)
+					g.GetComponent<Joint>().rotator.transform.GetChild(0).GetComponent<MeshRenderer> ().material.color = 
+						new Color (
+							Random.Range( Transforms [i] ["cr"],1), 
+							Random.Range( Transforms [i] ["cg"],1), 
+							Random.Range( Transforms [i] ["cb"],1));
+					
+				if(!overallScale.Equals(Vector3.one))
+					g.transform.localScale = overallScale;// Vector3.Scale(overallScale , new Vector3 (Transforms [i] ["sx"], Transforms [i] ["sy"], Transforms [i] ["sz"]));
 			}
 		}
 

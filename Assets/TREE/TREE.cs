@@ -39,8 +39,11 @@ public class TREE : MonoBehaviour {
 		traits = Traits.Instance;
 		traits.build ();
 
+		print (defaultJoint);
+
 		if (defaultJoint == null)
 			defaultJointExists = false;
+
 
 		trait = new Trait ();
 		trait.makeDefault ();
@@ -66,7 +69,9 @@ public class TREE : MonoBehaviour {
 
 	public void setDefaultJoint(GameObject Joint){
 		defaultJoint = Joint;
-		defaultJointExists = true;
+		if(defaultJoint!=null)
+			defaultJointExists = true;
+
 	}
 
 	GameObject makeRoot(){
@@ -80,12 +85,13 @@ public class TREE : MonoBehaviour {
 	}
 
 	public GameObject makeJoint(Trait t){
+
 		if (!defaultJointExists)
 			return TREEUtils.JointFactory (t);
 		else {
 			GameObject G = Instantiate (defaultJoint);
 			G.name = "joint_" + t.id;
-			G.AddComponent<Joint> ();
+//			G.AddComponent<Joint> ();
 			Joint J = G.GetComponent<Joint> ();
 			J.setTrait (t);
 			J.setScale (t.jointScale);
@@ -153,8 +159,13 @@ public class TREE : MonoBehaviour {
 		j.GetComponent<Joint> ().joints = amount;
 		j.transform.localPosition = new Vector3 (0, yOffset, 0);
 
-		if (counter == amount - 1)
+		if (counter == amount ) {
 			t.endJoint = true;
+			GameObject end = Instantiate (j.GetComponent<Joint> ().rotator.transform.GetChild (0).gameObject);
+			end.transform.parent = j.GetComponent<Joint>().rotator.transform;
+			end.transform.localPosition = new Vector3(0,t.jointScale,0);
+
+		}
 		if (counter < amount) {
 			RecursiveAdd (amount, ++counter, j.transform,t,dict);
 		}
