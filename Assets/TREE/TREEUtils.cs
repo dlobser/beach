@@ -160,16 +160,19 @@ public static class TREEUtils{
 			int c = 0;
 
 			if(selector[counter] > j.Length-1){
-				c=j.Length-1;
+				c= Mathf.Max(0,j.Length-1);
 			}
 			else
 				c=selector[counter];
 
 //			Debug.Log (j.Length);
 //			Debug.Log (c);
-			GameObject joint = j [c];
+			if (j.Length > 0) {
+				GameObject joint = j [c];
 //			Debug.Log (joint);
-			returner = findJoint(selector,counter+2,joint.GetComponent<Joint>().limbs[selector[counter+1]]);
+				returner = findJoint (selector, counter + 2, joint.GetComponent<Joint> ().limbs [selector [counter + 1]]);
+			} else
+				return null;
 		}
 		else{
 //			Debug.Log (branch.GetComponent<Joint>());
@@ -243,7 +246,7 @@ public static class TREEUtils{
 				jarr = findLimbs(g,jarr);
 
 				for (int j = 0 ; j < jarr.Length ; j++){
-
+					
 					stack = intPush (stack, j);
 					tempStack = makeTempStack (stack);
 					_makeList (range, tempStack, stackArray, i + 1, tree);
@@ -294,9 +297,7 @@ public static class TREEUtils{
 				for (var j = min ; j < max ; j++){
 
 					stack = intPush (stack, j);
-
 					tempStack = makeTempStack (stack);
-
 					for(var k = 0 ; k < stack.Length ; k++){
 						tempStack[k] = stack[k];
 					}
@@ -359,6 +360,7 @@ public static class TREEUtils{
 //		}
 //		Debug.Log (s);
 //		Debug.Log ("\n");
+
 		return stackArray;
 	}
 
@@ -369,6 +371,142 @@ public static class TREEUtils{
 	public static void appendBranch(GameObject obj){
 
 	}
+
+	public static void makeDictionary(GameObject joint){
+
+		List<int> stack = new List<int> ();
+		List<List<int>> stackArray = new List<List<int>> ();
+		int pusher = 0;
+
+		makeDictionary (joint, stack, stackArray, pusher);
+
+	}
+
+	public static void makeDictionary(GameObject joint, List<int> stack, List<List<int>> stackArray, int pusher){
+
+		stack.Add (pusher);
+
+		for (int i = 0; i < joint.GetComponent<Joint> ().limbs.Count; i++) {
+
+			stack.Add (i);
+
+			int[] tempStack = stack.ToArray ();
+
+			GameObject[] jarr = new GameObject[0];
+			GameObject g = findJoint (tempStack, 0, joint.transform.GetChild(0).gameObject);
+			jarr = findLimbs(g,jarr);
+
+			List<GameObject> limbs = jarr[0].GetComponent<Joint>().limbs;
+
+			List<int> tempStack2 = new List<int> (stack);
+			List<int> t2 = new List<int> (stack);
+
+			stackArray.Add (tempStack2);
+
+			t2.Add (-1);
+			List<int[]> t3 = makeList ( listToString(t2), joint.GetComponent<TREE> ());
+
+			for (int k = 0; k < t3.Count; k++) {
+				string tempString = arrayToString (t3 [k]);
+				GameObject tempJoint = findJoint (t3[k], 0, joint);
+				tempJoint.GetComponent<Joint> ().dictionaryName = t3[k];
+			}
+
+			for(var j = 0 ; j < jarr.Length ; j++){
+				makeDictionary(jarr[j], tempStack2, stackArray, j);
+			}
+
+			stack.RemoveAt(stack.Count-1);
+
+//	
+//			for (int j = 0 ; j < limbs.Count ; j++){
+//
+//				stack = intPush (stack, j);
+//				int[] tempStack2 = makeTempStack (stack);
+//				_makeList (range, tempStack2, stackArray, i + 1, tree);
+//				stack = intPop (stack);
+//			}
+
+		}
+		stack.RemoveAt(stack.Count-1);
+	}
+
+	/*
+	TREE.prototype.makeDictionary = function(obj,stacker,stackArray,pusher){
+
+		var joint = obj || this;
+		var stack = stacker || [];
+		var stackArray = stackArray || [];
+		var pusher = pusher || 0;
+
+		stack.push(pusher);
+
+		for(var i = 0 ; i < joint.limbs.length ; i++){
+
+			stack.push(i);
+
+			var jarr = [];
+			this.findLimbs(joint.limbs[i],jarr);
+
+			var tempStack = [];
+			var t2 = [];
+
+			for(var k = 0 ; k < stack.length ; k++){
+				tempStack[k] = stack[k];
+				t2[k] = stack[k];
+			}
+
+			stackArray.push(tempStack);
+
+			t2.push("all");
+			var t3 = this.makeList(t2);
+			var t4 = t3;//this.makeList(t3[0]);
+
+			for(var k = 0 ; k < t4.length ; k++){
+				var tempString = t4[k].toString();
+				var tempJoint = this.FIND(t4[k]);
+				this.parts[tempString] = tempJoint;
+				tempJoint.dictionaryName = tempString;
+				// console.log(tempString);
+				// console.log(joint.id);
+			}
+
+			for(var j = 0 ; j < jarr.length ; j++){
+				this.makeDictionary(jarr[j],tempStack,stackArray,j	);
+			}
+
+			stack.pop();
+
+		}
+
+		stack.pop();
+
+		return stackArray;
+	}
+		*/
+
+
+	public static string arrayToString(int[] jointList){
+		string s = "";
+		for (int i = 0; i < jointList.Length; i++) {
+			s += jointList [i].ToString ();
+			if (i < jointList.Length - 1)
+				s += "|";
+		}
+		return s;
+	}
+
+	public static string listToString(List<int> jointList){
+		string s = "";
+		for (int i = 0; i < jointList.Count; i++) {
+			s += jointList [i].ToString ();
+			if (i < jointList.Count - 1)
+				s += "|";
+		}
+		return s;
+	}
+
+
 
 //	public static void appendBranch(GameObject obj, Vector3 rotate, float scale){
 //

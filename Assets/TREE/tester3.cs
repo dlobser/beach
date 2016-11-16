@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class tester2 : MonoBehaviour {
+public class tester3: MonoBehaviour {
 	
 	TREE p;
 	public GameObject defaultJoint;
@@ -37,10 +37,10 @@ public class tester2 : MonoBehaviour {
 
 	
 		p.generate (
-			"joints",	"2,2,2",
-			"rads",		"1,6,6",
-			"angles",	"0,90",
-			"length",	"2.7,1.5,1",
+			"joints",	"1,2",
+			"rads",		"3,24",
+			"angles",	"120,90",
+			"length",	"2.7,4.5",
 			"divs",		"1,1",
 			"start",	"0,0"
 		);
@@ -77,32 +77,33 @@ public class tester2 : MonoBehaviour {
 //		"rx:0,srx:10,sfrx:.1,ssrx:-.3,smrx:60",
 //		"rx:0,srx:10,sfrx:.5,ssrx:-.1,smrx:60",
 //
-		xForm.Update ();
+//		xForm.Update ();
 
 		xForm2 = new TreeTransform ();
 //		xForm2 = new TreeTransform ();
 		xForm2.Setup(
 			new string[]{
-				"0|-1|-1|-1|-1|-1|-1",
-				"0|-1|-1|-1|-1",
+//				"0|-1|-1|-1|-1|-1|-1",
+//				"0|-1|-1|-1|-1",
 				"0|-1|-1",
 			},
 			new string[]{
-				"ory:6,orx:5",
-				"ory:6,orx:5",
-				"ssrx:-1.3,sfrx:1.0,smrx:2,sMult:1.4"
+//				"ory:6,orx:5",
+				"ory:6",
+//				"ssrx:-1.3,sfrx:1.0,smrx:2,sMult:1.4"
 		},p);
 
 		GameObject g = TREEUtils.findJoint (new int[]{0,0,0}, 0, p.gameObject);
 
 
 	}
-
+	//ffmpeg -i eyeWagon.mov -s 400x400 -pix_fmt rgb24 -r 24 -f gif - | gifsicle --optimize=3 --delay=1 > out.gif
 
 
 	// Update is called once per frame
 	void Update () {
 		xForm2.Update ();
+		print ("what");
 //		xForm.Update ();
 //		for (int i = 0; i < testList.Count; i++) {
 //			GameObject g = TREEUtils.findJoint (testList [i], 0, transform.GetChild (0).gameObject);
@@ -266,7 +267,7 @@ public class tester2 : MonoBehaviour {
 //
 //				g.transform.localEulerAngles = rotate+init+sinRotate+noiseRotate;
 //				g.transform.Rotate (new Vector3(Transforms [i] ["orx"] * Time.time, Transforms [i] ["ory"] * Time.time, Transforms [i] ["orz"] * Time.time));
-//				print (Transforms [i] ["orx"]);
+//
 //				Vector3 overallScale = 	new Vector3 (Transforms [i] ["scale"], Transforms [i] ["scale"], Transforms [i] ["scale"]);
 ////				Debug.Log (overallScale.x);
 //

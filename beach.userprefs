@@ -1,10 +1,74 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TREE/tester2.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../VR/FlockDev/Assets/Dev/MusicVideo/Scripts/Flock/FlockManipulator_Centroid.cs">
     <Files>
-      <File FileName="Assets/TREE/tester2.cs" Line="40" Column="16" />
+      <File FileName="../../../VR/FlockDev/Assets/Dev/MusicVideo/Scripts/Flock/FlockManipulator_Centroid.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/textScroller.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/prt/Assets/athon/scripts/Dials.cs" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Master/Shaders/VertexColorsWithTint.shader" Line="1" Column="1" />
+      <File FileName="../../../economist/OceansSandbox/Assets/CloudsWork/swirl 1.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/foto-fx/Foto-Sandbox/Assets/ONFoto/Shaders/basicTextureTransparentWaving_01_SHDR.shader" Line="1" Column="1" />
+      <File FileName="../../../VR/prt/Assets/athon/shaders/uv.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/Editor/TransformUniversalEditor.cs" Line="1" Column="1" />
+      <File FileName="../../../../../Desktop/sky.shader" Line="1" Column="1" />
+      <File FileName="../../../VR/Birds/Assets/scripts/Painter/Painter.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/avatar/Unity/avatar-playground/Assets/PartsDatastore/Scripts/Utils/snapshot.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/leap/Assets/LeapMotion/Scripts/Hands/HandFader.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/leap/Assets/LeapMotion/Scripts/Hands/HandModel.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/leap/Assets/LeapMotion/Scripts/Hands/PolyFinger.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/leap/Assets/LeapMotion/Scripts/Hands/PolyHand.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/prt/Assets/athon/shaders/simpleSin.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/transparentTint.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/transparentTintAdd 1.shader" Line="1" Column="1" />
+      <File FileName="../../oknoreally/Assets/athon/wireFrameAthon.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/tester2.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/GenomeUtils.cs" Line="1" Column="1" />
+      <File FileName="../../../Unity/DuAL/DuAL/Assets/Scripts/spring.cs" Line="1" Column="1" />
       <File FileName="Assets/TREE/TREE.cs" Line="1" Column="1" />
-      <File FileName="Assets/TREE/TREEUtils.cs" Line="221" Column="33" />
+      <File FileName="Assets/TREE/TREEUtils.cs" Line="1" Column="1" />
+      <File FileName="Assets/Mote/pSpring.cs" Line="1" Column="1" />
+      <File FileName="../../../Unity/Festival/Assets/Mote/pSpring.cs" Line="1" Column="1" />
+      <File FileName="../../../Unity/seq/Assets/sequencer/scripts/Sebastian/spring.cs" Line="1" Column="1" />
+      <File FileName="../../../Unity/DuAL/DuAL/Assets/sequencer/scripts/Sebastian/StrokeSpring.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/spring.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/spring1.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/TreeTransform.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/Trait.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/tester4.cs" Line="1" Column="1" />
+      <File FileName="Assets/TREE/Joint.cs" Line="1" Column="1" />
+      <File FileName="../../../perlin/holojam-crayons/holojam-crayons/Assets/Scripts/offsetUV.cs" Line="1" Column="1" />
+      <File FileName="../../../../dev/builtin_shaders-5.1.2f1/DefaultResourcesExtra/Standard.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/transparentTintAdd 2.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/transparentTintAdd.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/transparentTintRandomColor.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/ring5.shader" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/shaders/ring4.shader" Line="1" Column="1" />
+      <File FileName="../../../VR/prt/Assets/athon/shaders/gravity.shader" Line="1" Column="1" />
+      <File FileName="../../../economist/OceansSandbox/Assets/Swirls/oceanCurves.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/swirly/swirlingLights.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/birdMixer.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/boids.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/BIRD.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/scripts/exp3/animationControl/switchAnimations.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/party/exp4-holiday/Assets/Dev/Elements/Shaders/lightingModel.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/party/exp4-holiday/Assets/Dev/Elements/Shaders/lightingModelMultiUV.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/avatar/Unity/avatar-playground copy/Assets/Scripts/Utils/DLUtils.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/foto-fx/Foto-Sandbox/Assets/ONFoto/Shaders/basicTextureTransparentWaving_SHDR.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/foto-fx/Foto-Sandbox/Assets/ONFoto/Shaders/WarpyTransparent_SHDR.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/foto-fx/Foto-Sandbox/Assets/ONFoto/Shaders/Warpy_SHDR.shader" Line="1" Column="1" />
+      <File FileName="../../../economist/OceansSandbox/Assets/CloudsWork/swirl.shader" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Shots/Shot_040_UN/Scripts/copyTransformsSimple.cs" Line="1" Column="1" />
+      <File FileName="../../../Google/photo/Assets/PrivatePhoto/scripts/Util.cs" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Master/Scripts/Utility.cs" Line="1" Column="1" />
+      <File FileName="../../../Samsung/avatar/Unity/avatar-playground/Assets/PartsDatastore/Scripts/Utils/DLUtils.cs" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Editor/ON Menu.cs" Line="1" Column="1" />
+      <File FileName="../../../../../Downloads/ArrayShader.shader" Line="1" Column="1" />
+      <File FileName="../../../Samsung/card/Unity/Experience3-bonvoyage/Assets/Elements/Shaders/cgToon.shader" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Master/Shaders/VertexColorsWithTintWarp.shader" Line="1" Column="1" />
+      <File FileName="../../../VR/FlockDev/Assets/Dev/ckromero/Scripts/PlayerStateManager.cs" Line="1" Column="1" />
+      <File FileName="../../../VR/prt/Assets/athon/scripts/midiLaserID.cs" Line="1" Column="1" />
+      <File FileName="../../../economist/oceansvr/Assets/OceansVR/Master/Scripts/SplineFollower/Spline.cs" Line="1" Column="1" />
+      <File FileName="../../../../../Downloads/spline.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

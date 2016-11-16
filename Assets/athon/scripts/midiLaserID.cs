@@ -193,8 +193,8 @@ public class midiLaserID : MonoBehaviour {
 //			nob2[i] = MidiInput.GetKnob(i,MidiInput.Filter.Realtime)*mult;
 //		}
 
-		Camera.main.transform.localPosition = new Vector3 (0, 0, Mathf.Pow(d.knobs[1,2]*.1f,3) * -5f);
-		Camera.main.transform.parent.transform.Rotate (0, d.knobs[1,3] * -.1f*t*60,0);
+		Camera.main.transform.parent.transform.localPosition = new Vector3 (0, 0, Mathf.Pow(d.knobs[1,2]*.1f,3) * -5f);
+		Camera.main.transform.parent.transform.parent.transform.Rotate (0, d.knobs[1,3] * -.1f*t*60,0);
 
 		objSwitcher ();
 		things [whichThing].transform.Rotate (d.knobs[1,4] * -.1f * t * 60, d.knobs[1,5] * -.1f * t * 60, d.knobs[1,6] * -.1f * t * 60);
