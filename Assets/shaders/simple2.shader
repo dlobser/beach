@@ -1,4 +1,6 @@
-﻿Shader "Custom/simple2" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Custom/simple2" {
 	Properties {
 		_Color ("Color", Color) = (0.26,0.19,0.16,0.0)
 		_Color2 ("Color2", Color) = (0.26,0.19,0.16,0.0)
@@ -39,7 +41,7 @@
 				v2f vert(appdata_full v) {
 					v2f o;
 					o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-					o.wPos = mul(_Object2World, v.vertex);
+					o.wPos = mul(unity_ObjectToWorld, v.vertex);
 					float d = max(1.,(dist(_Lgt1.z,o.wPos.z)*-1.)+125.);
 					o.pos.x*=max(1.,d*.009);
 					o.pos.y*=max(1.,d*.009);

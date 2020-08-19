@@ -1,4 +1,6 @@
-﻿// Unlit alpha-blended shader.
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+// Unlit alpha-blended shader.
 // - no lighting
 // - no lightmap support
 // - no per-material color
@@ -56,7 +58,7 @@ SubShader {
 				v2f o;
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				o.pos = (mul(_Object2World,v.vertex)).xyz;
+				o.pos = (mul(unity_ObjectToWorld,v.vertex)).xyz;
 				o.normal = v.normal;
 //				UNITY_TRANSFER_FOG(o,o.vertex);
 				
